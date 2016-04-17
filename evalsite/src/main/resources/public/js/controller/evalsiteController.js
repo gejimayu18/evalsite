@@ -13,7 +13,6 @@
 			$scope.data.outputpulldogbehaviors = {};
 			$scope.form.commentWidth = 100;
 			$scope.form.commentHeight = 4;
-//			$scope.data.evalDate = $filter('date')(Date.now(), 'MM/dd/yyyy');
 			$scope.data.evalDate = new Date(Date.now());
 			
 			evalsiteRESTService.getBehaviors('pull').get(
@@ -29,9 +28,15 @@
 					function () {}
 			);
 			
-			evalsiteRESTService.getBehaviors('sociability').get(
+			evalsiteRESTService.getBehaviors('ignore').get(
 					function (response) {
-						$scope.data.sociabilitybehaviors = response.behaviorList;
+						$scope.data.ignorebehaviors = response.behaviorList;
+					},
+					function () {}
+			);
+			evalsiteRESTService.getBehaviors('engage').get(
+					function (response) {
+						$scope.data.engagebehaviors = response.behaviorList;
 					},
 					function () {}
 			);
