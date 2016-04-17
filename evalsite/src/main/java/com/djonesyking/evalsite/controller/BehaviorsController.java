@@ -7,9 +7,10 @@ import com.djonesyking.evalsite.domain.Behavior;
 import com.djonesyking.evalsite.domain.BehaviorList;
 
 @RestController
-public class AllowedValuesController {
+@RequestMapping("/rest/behaviors/")
+public class BehaviorsController {
 
-    @RequestMapping("/rest/behaviors/pull")
+    @RequestMapping("pull")
     public BehaviorList getPullBehaviors() {
     	BehaviorList list = new BehaviorList();
     	list.addBehavior(new Behavior("calm"));
@@ -32,7 +33,7 @@ public class AllowedValuesController {
     	list.addBehavior(new Behavior("other"));
         return list;
     }
-    @RequestMapping("/rest/behaviors/walking")
+    @RequestMapping("walking")
     public BehaviorList getWalkingBehaviors() {
     	BehaviorList list = new BehaviorList();
     	list.addBehavior(new Behavior("walks nicely"));
@@ -50,9 +51,16 @@ public class AllowedValuesController {
     	list.addBehavior(new Behavior("other"));
     	return list;
     }
-    @RequestMapping("/rest/behaviors/sociability")
+    @RequestMapping("ignore")
     public BehaviorList getIgnoreBehaviors() {
-    	BehaviorList list = new BehaviorList();
+    	return buildSociabilityList();
+    }
+    @RequestMapping("engage")
+    public BehaviorList getEngageBehaviors() {
+    	return buildSociabilityList();
+    }
+	private BehaviorList buildSociabilityList() {
+		BehaviorList list = new BehaviorList();
     	list.addBehavior(new Behavior("Soft Eyes"));
     	list.addBehavior(new Behavior("Hard Eyes"));
     	list.addBehavior(new Behavior("Whale Eyes"));
@@ -66,6 +74,7 @@ public class AllowedValuesController {
     	list.addBehavior(new Behavior("Wagging Tail"));
     	list.addBehavior(new Behavior("other"));
     	return list;
-    }
+	}
+    
 
 }

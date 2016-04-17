@@ -19,13 +19,13 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = MockServletContext.class)
 @WebAppConfiguration
-public class AllowedValuesControllerTest {
+public class BehaviorsControllerTest {
 
 	private MockMvc mvc;
 
 	@Before
 	public void setUp() throws Exception {
-		mvc = MockMvcBuilders.standaloneSetup(new AllowedValuesController()).build();
+		mvc = MockMvcBuilders.standaloneSetup(new BehaviorsController()).build();
 	}
 
 	@Test

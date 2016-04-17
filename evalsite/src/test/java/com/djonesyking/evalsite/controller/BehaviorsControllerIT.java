@@ -23,7 +23,7 @@ import com.djonesyking.evalsite.domain.BehaviorList;
 @SpringApplicationConfiguration(classes = Application.class)
 @WebAppConfiguration
 @IntegrationTest({"server.port=0"})
-public class AllowedValuesControllerIT {
+public class BehaviorsControllerIT {
 
     @Value("${local.server.port}")
     private int port;
