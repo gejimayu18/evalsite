@@ -1,0 +1,38 @@
+<h2>Sociability</h2>
+<h3>Total Score: {{data.ignoreScore + data.engageScore}}</h3>
+<table>
+	<tr>
+		<td><strong>Stand and ignore for 60 seconds:</strong></td>
+		<td>Score: <input type="number" ng-model="data.ignoreScore" id="ignoreScore" /></td>
+	</tr>
+	<tr>
+		<td>
+			<div isteven-multi-select input-model="data.sociabilitybehaviors"
+				output-model="data.outputignorebehaviors" button-label="name" item-label="name"
+				tick-property="ticked"></div>
+		</td>
+		<td ng-show="form.containsOther(data.outputignorebehaviors)" >
+			<label>Other: </label>
+			<input id="ignorebehaviorother" />
+		</td>
+	</tr>
+	<tr>
+		<td><strong>Call dog over and solicit attention for 20 seconds:</strong></td>
+		<td>Score: <input type="number" ng-model="data.engageScore" id="engageScore" /></td>
+	</tr>
+	<tr>
+		<td>
+			<div isteven-multi-select input-model="data.walkingbehaviors"
+				output-model="data.outputwalkingbehaviors" button-label="name" item-label="name"
+				tick-property="ticked"></div>
+		</td>
+		<td ng-show="form.containsOther(data.outputwalkingbehaviors)">
+			<label>Other: </label>
+			<input id="walkingbehaviorother" />
+		</td>
+	</tr>
+</table>
+<label>Sociability comments</label>
+<br />
+<textarea id="sociabilityComments" rows="{{form.commentHeight}}" cols="{{form.commentWidth}}">
+</textarea>

@@ -1,0 +1,31 @@
+<h2>Kennel Behavior</h2>
+<table>
+	<tr>
+		<td><strong>Pulling dog:</strong></td>
+		<td>
+			<div isteven-multi-select input-model="data.pulldogbehaviors"
+				output-model="data.outputpulldogbehaviors" button-label="name" item-label="name"
+				tick-property="ticked"></div>
+		</td>
+		<td ng-show="form.containsOther(data.outputpulldogbehaviors)" >
+			<label>Other: </label>
+			<input id="pulldogbehaviorother" />
+		</td>
+	</tr>
+	<tr>
+		<td><strong>Walking:</strong></td>
+		<td>
+			<div isteven-multi-select input-model="data.walkingbehaviors"
+				output-model="data.outputwalkingbehaviors" button-label="name" item-label="name"
+				tick-property="ticked"></div>
+		</td>
+		<td ng-show="form.containsOther(data.outputwalkingbehaviors)">
+			<label>Other: </label>
+			<input id="walkingbehaviorother" />
+		</td>
+	</tr>
+</table>
+<label>Kennel Behavior comments</label>
+<br />
+<textarea id="kennelBehaviorComments" rows="{{form.commentHeight}}" cols="{{form.commentWidth}}">
+</textarea>
