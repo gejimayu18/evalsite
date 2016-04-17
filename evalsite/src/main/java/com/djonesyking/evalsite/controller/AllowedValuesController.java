@@ -1,13 +1,13 @@
-package hello;
+package com.djonesyking.evalsite.controller;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import hello.domain.Behavior;
-import hello.domain.BehaviorList;
+import com.djonesyking.evalsite.domain.Behavior;
+import com.djonesyking.evalsite.domain.BehaviorList;
 
 @RestController
-public class HelloController {
+public class AllowedValuesController {
 
     @RequestMapping("/rest/behaviors/pull")
     public BehaviorList getPullBehaviors() {

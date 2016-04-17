@@ -1,4 +1,4 @@
-package hello;
+package com.djonesyking.evalsite;
 
 import java.util.Arrays;
 

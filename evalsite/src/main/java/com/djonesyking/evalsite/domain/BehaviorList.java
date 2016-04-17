@@ -1,4 +1,4 @@
-package hello.domain;
+package com.djonesyking.evalsite.domain;
 
 import java.util.ArrayList;
 import java.util.List;
