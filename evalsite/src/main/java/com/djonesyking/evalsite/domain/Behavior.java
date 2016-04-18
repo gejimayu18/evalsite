@@ -3,13 +3,19 @@ package com.djonesyking.evalsite.domain;
 public class Behavior {
 	
 	private String name;
+	private String category;
 	private boolean ticked;
 	
 	public Behavior() {	}
 	
 	public Behavior(String name) {
+		this(name, "");
+	}
+	
+	public Behavior(String name, String category) {
 		this.name = name;
 		this.ticked = false;
+		this.category = category;
 	}
 	
 	public String getName() {
@@ -23,6 +29,14 @@ public class Behavior {
 	}
 	public void setTicked(boolean ticked) {
 		this.ticked = ticked;
+	}
+	
+	public String getCategory() {
+		return category;
+	}
+
+	public void setCategory(String category) {
+		this.category = category;
 	}
 
 	@Override

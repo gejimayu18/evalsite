@@ -13,7 +13,24 @@
 		<td><strong>Breed(s)</strong></td>
 		<td><input id="breedtxt" /></td>
 		<td><strong>Gender</strong></td>
-		<td><input id="gendertxt" /></td>
+		<td>
+			<label> 
+				<input type="radio" ng-model="data.gender" value="fi" /> 
+				F/I
+			</label> 
+			<label> 
+				<input type="radio" ng-model="data.gender" value="fs" /> 
+				F/S
+			</label>
+			<label> 
+				<input type="radio" ng-model="data.gender" value="mi" /> 
+				M/I
+			</label>
+			<label> 
+				<input type="radio" ng-model="data.gender" value="mn" /> 
+				M/N
+			</label>
+		</td>
 		<td><strong>Age Range</strong></td>
 		<td><input id="agetxt" /></td>
 	</tr>
@@ -23,8 +40,26 @@
 		<td><strong>Today's Date</strong></td>
 		<td><input type="date" ng-model="data.evalDate" id="evaldatetxt" /></td>
 		<td><strong>Re-eval</strong></td>
-		<td><input id="reevaltxt" /></td>
+		<td>
+			<label> 
+				<input type="radio" ng-model="data.reeval" value="true" /> 
+				Yes
+			</label> 
+			<label> 
+				<input type="radio" ng-model="data.reeval" value="false" /> 
+				No
+			</label>
+		</td>
 		<td><strong>Pending</strong></td>
-		<td><input id="pendingtxt" /></td>
+		<td>
+			<label> 
+				<input type="radio" ng-model="data.pending" value="true" /> 
+				Yes
+			</label> 
+			<label> 
+				<input type="radio" ng-model="data.pending" value="false" /> 
+				No
+			</label>
+		</td>
 	</tr>
 </table>

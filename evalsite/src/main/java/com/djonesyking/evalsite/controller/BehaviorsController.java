@@ -75,6 +75,37 @@ public class BehaviorsController {
     	list.addBehavior(new Behavior("other"));
     	return list;
 	}
+	
+	@RequestMapping("teethcheck")
+    public BehaviorList getTeethCheckBehaviors() {
+		BehaviorList list = new BehaviorList();
+    	list.addBehavior(new Behavior("Playful"));
+    	list.addBehavior(new Behavior("Enjoyed it"));
+    	list.addBehavior(new Behavior("tolerant but didn't enjoy"));
+    	list.addBehavior(new Behavior("Submitted"));
+    	list.addBehavior(new Behavior("Pushy"));
+    	list.addBehavior(new Behavior("Lip curl"));
+    	list.addBehavior(new Behavior("Snap"));
+    	list.addBehavior(new Behavior("Escalated intensity of corrections to handler"));
+    	list.addBehavior(new Behavior("Tried to avoid"));
+    	list.addBehavior(new Behavior("Shake off"));
+    	list.addBehavior(new Behavior("Growl"));
+    	list.addBehavior(new Behavior("other"));
+    	return list;
+    }
+	
+	@RequestMapping("bodyhandling")
+	public BehaviorList getBodyHandlingBehaviors() {
+		BehaviorList list = new BehaviorList();
+		list.addBehavior(new Behavior("Playful/excited/silly"));
+		list.addBehavior(new Behavior("calm/enjoys"));
+		list.addBehavior(new Behavior("tolerant but unsure/didn't enjoy"));
+		list.addBehavior(new Behavior("stiff/very unsure but tolerant"));
+		list.addBehavior(new Behavior("Indifferent"));
+		list.addBehavior(new Behavior("Snappy/Growly/Agitated"));
+		list.addBehavior(new Behavior("other"));
+		return list;
+	}
     
 
 }
