@@ -1,0 +1,54 @@
+<h2>Dolls</h2>
+<h3>Baby</h3>
+<table>
+	<tr>
+		<td>
+			<label>Intro</label>
+			<div isteven-multi-select input-model="data.dolls.initialbaby"
+				output-model="data.outputdolls.initialbaby" button-label="name"
+				item-label="name" tick-property="ticked"></div>
+		</td>
+		<td ng-show="form.containsOther(data.outputdolls.initialbaby)" >
+			<label>Other: </label>
+			<input id="initialbabyother" />
+		</td>
+		<td>
+			<label>After initial intro</label>
+			<div isteven-multi-select input-model="data.dolls.afterbaby"
+				output-model="data.outputdolls.afterbaby" button-label="name"
+				item-label="name" tick-property="ticked"></div>
+		</td>
+		<td ng-show="form.containsOther(data.outputdolls.afterbaby)" >
+			<label>Other: </label>
+			<input id="afterbabyeother" />
+	</tr>
+</table>
+<h3>Toddler</h3>
+<table>
+	<tr>
+		<td>
+			<label>Intro</label>
+			<div isteven-multi-select input-model="data.dolls.initialtoddler"
+				output-model="data.outputdolls.initialtoddler" button-label="name"
+				item-label="name" tick-property="ticked"></div>
+		</td>
+		<td ng-show="form.containsOther(data.outputdolls.initialtoddler)" >
+			<label>Other: </label>
+			<input id="initialtoddlerother" />
+		</td>
+		<td>
+			<label>After initial intro</label>
+			<div isteven-multi-select input-model="data.dolls.aftertoddler"
+				output-model="data.outputdolls.aftertoddler" button-label="name"
+				item-label="name" tick-property="ticked"></div>
+		</td>
+		<td ng-show="form.containsOther(data.outputdolls.aftertoddler)" >
+			<label>Other: </label>
+			<input id="aftertoddlereother" />
+	</tr>
+</table>
+<label>Dolls comments</label>
+<br />
+<textarea id="dollsComments" rows="{{form.commentHeight}}"
+	cols="{{form.commentWidth}}">
+</textarea>

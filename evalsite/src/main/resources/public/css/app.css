@@ -5,3 +5,13 @@ th, td {
 h1 {
 	padding-bottom: 30px;
 }
+
+a.navlinks { 
+	cursor: pointer; 
+}
+.navigation_top {
+	padding-bottom: 20px;
+}
+.navigation_bottom {
+	padding-top: 20px;
+}

@@ -21,8 +21,13 @@
 			$scope.data.outputfood = {};
 			$scope.data.noises = {};
 			$scope.data.outputnoises = {};
+			$scope.data.dolls = {};
+			$scope.data.outputdolls = {};
+			$scope.data.animaltest = {};
+			$scope.data.outputanimaltest = {};
 			$scope.form.commentWidth = 100;
 			$scope.form.commentHeight = 4;
+			$scope.form.mode = 'sociability';
 			$scope.data.evalDate = new Date(Date.now());
 			
 			evalsiteRESTService.getBehaviors('pull').get(
@@ -155,6 +160,39 @@
 					},
 					function () {}
 			);
+			evalsiteRESTService.getBehaviors('dolls').get(
+					function (response) {
+						$scope.data.dolls.initialbaby = angular.copy(response.behaviorList);
+						$scope.data.dolls.afterbaby = angular.copy(response.behaviorList);
+						$scope.data.dolls.initialtoddler = angular.copy(response.behaviorList);
+						$scope.data.dolls.aftertoddler = angular.copy(response.behaviorList);
+					},
+					function () {}
+			);
+			evalsiteRESTService.getBehaviors('animaltest/initialcat').get(
+					function (response) {
+						$scope.data.animaltest.initialcat = angular.copy(response.behaviorList);
+					},
+					function () {}
+			);
+			evalsiteRESTService.getBehaviors('animaltest/aftercat').get(
+					function (response) {
+						$scope.data.animaltest.aftercat = angular.copy(response.behaviorList);
+					},
+					function () {}
+			);
+			evalsiteRESTService.getBehaviors('animaltest/dogrecommendations').get(
+					function (response) {
+						$scope.data.animaltest.dogrecommendations = angular.copy(response.behaviorList);
+					},
+					function () {}
+			);
+			evalsiteRESTService.getBehaviors('animaltest/catrecommendations').get(
+					function (response) {
+						$scope.data.animaltest.catrecommendations = angular.copy(response.behaviorList);
+					},
+					function () {}
+			);
 			
 			$scope.form.containsOther = function(dataContainsOther) {
 				var containsOther = false;
@@ -175,6 +213,10 @@
 					}
 				});
 				return containsOther;
+			}
+			
+			$scope.form.switchTo = function(newMode) {
+				$scope.form.mode = newMode;
 			}
 			
 		}]);

@@ -273,6 +273,85 @@ public class BehaviorsController {
 		list.addBehavior(new Behavior("other"));
 		return list;
 	}
+	@RequestMapping("dolls")
+	public BehaviorList getDollsBehaviors() {
+		BehaviorList list = getRecoveryNoiseBehaviors();
+		list.addBehavior(new Behavior("Friendly"));
+		list.addBehavior(new Behavior("Sniffing"));
+		list.addBehavior(new Behavior("Curious"));
+		list.addBehavior(new Behavior("Loose body"));
+		list.addListOfBehaviors(getEyeList());
+		list.addListOfBehaviors(getTailList());
+		list.addBehavior(new Behavior("Jumpy"));
+		list.addBehavior(new Behavior("Hyper"));
+		list.addBehavior(new Behavior("Sits"));
+		list.addBehavior(new Behavior("Lays"));
+		list.addBehavior(new Behavior("other"));
+		return list;
+	}
+	@RequestMapping("animaltest/initialcat")
+	public BehaviorList getInitialCatBehaviors() {
+		BehaviorList list = new BehaviorList();
+		list.addBehavior(new Behavior("Curious"));
+		list.addBehavior(new Behavior("Startled"));
+		list.addBehavior(new Behavior("Whining"));
+		list.addBehavior(new Behavior("Barking"));
+		list.addBehavior(new Behavior("Fixated"));
+		list.addBehavior(new Behavior("Fearful"));
+		list.addBehavior(new Behavior("Shy"));
+		list.addBehavior(new Behavior("Friendly"));
+		list.addBehavior(new Behavior("other"));
+		return list;
+	}
+	@RequestMapping("animaltest/aftercat")
+	public BehaviorList getAfterCatBehaviors() {
+		BehaviorList list = new BehaviorList();
+		list.addBehavior(new Behavior("Curious"));
+		list.addBehavior(new Behavior("Friendly"));
+		list.addBehavior(new Behavior("Fearful"));
+		list.addBehavior(new Behavior("Playful"));
+		list.addBehavior(new Behavior("Avoids"));
+		list.addBehavior(new Behavior("Whining"));
+		list.addBehavior(new Behavior("Barking"));
+		list.addBehavior(new Behavior("Fixated"));
+		list.addBehavior(new Behavior("Backs down"));
+		list.addBehavior(new Behavior("Overwhelmed"));
+		list.addBehavior(new Behavior("Stressed"));
+		list.addBehavior(new Behavior("May challenge"));
+		list.addBehavior(new Behavior("May pester"));
+		list.addBehavior(new Behavior("May fight out of fear"));
+		list.addBehavior(new Behavior("May hunt"));
+		list.addBehavior(new Behavior("Slow intro best"));
+		list.addBehavior(new Behavior("other"));
+		return list;
+	}
+	@RequestMapping("animaltest/dogrecommendations")
+	public BehaviorList getDogRecommendations() {
+		BehaviorList list = new BehaviorList();
+		list.addBehavior(new Behavior("No dogs"));
+		list.addBehavior(new Behavior("Some dogs"));
+		list.addBehavior(new Behavior("Slow intro"));
+		list.addBehavior(new Behavior("All dogs"));
+		list.addBehavior(new Behavior("Calm dogs"));
+		list.addBehavior(new Behavior("Playful dogs"));
+		list.addBehavior(new Behavior("Must go with another dog"));
+		list.addBehavior(new Behavior("Similar sized dog"));
+		list.addBehavior(new Behavior("In passing only"));
+		list.addBehavior(new Behavior("Undetermined"));
+		list.addBehavior(new Behavior("other"));
+		return list;
+	}
+	@RequestMapping("animaltest/catrecommendations")
+	public BehaviorList getCatRecommendations() {
+		BehaviorList list = new BehaviorList();
+		list.addBehavior(new Behavior("Can live with cats"));
+		list.addBehavior(new Behavior("Slow intro for dog's sake"));
+		list.addBehavior(new Behavior("Slow intro for cat's sake"));
+		list.addBehavior(new Behavior("No cats"));
+		list.addBehavior(new Behavior("Undetermined"));
+		list.addBehavior(new Behavior("other"));
+		return list;
+	}
 	
 	private List<Behavior> getTailList() {
 		List<Behavior> list = new ArrayList<Behavior>();

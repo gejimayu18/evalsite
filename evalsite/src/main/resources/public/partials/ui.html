@@ -1,23 +1,42 @@
 <h1>Canine Behavior Evaluation Form</h1>
-
-<data-ng-include  src="'partials/header.html'"></data-ng-include>
-
-<br />
-
-<data-ng-include  src="'partials/kennelbehavior.html'"></data-ng-include>
-
-<br />
-
-<data-ng-include  src="'partials/sociability.html'"></data-ng-include>
-
-<br />
-
-<data-ng-include  src="'partials/bodyhandling.html'"></data-ng-include>
-
-<br />
-
-<data-ng-include  src="'partials/resources.html'"></data-ng-include>
-
-<br />
-
-<data-ng-include  src="'partials/noises.html'"></data-ng-include>
+<div class="navigation_top">
+	<data-ng-include src="'partials/navigation.html'"></data-ng-include>
+</div>
+<div style="height:10%;overflow:auto">
+	
+	<div>
+		<data-ng-include src="'partials/header.html'"></data-ng-include>
+	</div>
+	
+	<div ng-show="form.mode === 'sociability'">
+		<data-ng-include src="'partials/kennelbehavior.html'"></data-ng-include>
+	</div>
+	
+	<div ng-show="form.mode === 'sociability'">
+		<data-ng-include src="'partials/sociability.html'"></data-ng-include>
+	</div>
+	
+	<div ng-show="form.mode === 'bodyhandling'">
+		<data-ng-include src="'partials/bodyhandling.html'"></data-ng-include>
+	</div>
+	
+	<div ng-show="form.mode === 'resources'">
+		<data-ng-include src="'partials/resources.html'"></data-ng-include>
+	</div>
+	
+	<div ng-show="form.mode === 'noises'">
+		<data-ng-include src="'partials/noises.html'"></data-ng-include>
+	</div>
+	
+	<div ng-show="form.mode === 'dolls'">
+		<data-ng-include src="'partials/dolls.html'"></data-ng-include>
+	</div>
+	
+	<div ng-show="form.mode === 'animaltest'">
+		<data-ng-include src="'partials/animaltest.html'"></data-ng-include>
+	</div>
+	
+</div>
+<div class="navigation_bottom">
+	<data-ng-include src="'partials/navigation.html'"></data-ng-include>
+</div>

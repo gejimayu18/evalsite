@@ -1,0 +1,182 @@
+<h2>Dog test</h2>
+<table>
+	<tr>
+		<td>
+			<strong>Previously tested</strong>
+		</td>
+		<td>
+			<label style="font-weight:normal;"> 
+				<input type="radio" ng-model="data.animaltest.dogprevtested" value="true" /> 
+				Yes
+			</label> 
+			<label style="font-weight:normal;">
+				<input type="radio" ng-model="data.animaltest.dogprevtested" value="false" /> 
+				No
+			</label>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<strong>Dog in playgroup</strong>
+		</td>
+		<td>
+			<label style="font-weight:normal;"> 
+				<input type="radio" ng-model="data.animaltest.dogplaygroup" value="yes" /> 
+				Yes
+			</label> 
+			<label style="font-weight:normal;">
+				<input type="radio" ng-model="data.animaltest.dogplaygroup" value="no" /> 
+				No
+			</label>
+			<label style="font-weight:normal;">
+				<input type="radio" ng-model="data.animaltest.dogplaygroup" value="unkown" /> 
+				Unkown
+			</label>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<strong>Needs further testing</strong>
+		</td>
+		<td>
+			<label style="font-weight:normal;">
+				<input type="radio" ng-model="data.animaltest.dogfurthertesting" value="yes" /> 
+				Yes
+			</label> 
+			<label style="font-weight:normal;">
+				<input type="radio" ng-model="data.animaltest.dogfurthertesting" value="no" /> 
+				No
+			</label>
+			<label style="font-weight:normal;"> 
+				<input type="radio" ng-model="data.animaltest.dogfurthertesting" value="unkown" /> 
+				Unkown
+			</label>
+		</td>
+	</tr>
+</table>
+<div>
+	<label>Dog test #1</label><br />
+	<textarea id="dogTest1Comments" rows="{{form.commentHeight}}"
+		cols="{{form.commentWidth}}">
+	</textarea>
+</div>
+<div>
+	<label>Dog test #2</label><br />
+	<textarea id="dogTest2Comments" rows="{{form.commentHeight}}"
+		cols="{{form.commentWidth}}">
+	</textarea>
+</div>
+<table>
+	<tr>
+		<td>
+			<label>Recommendations</label>
+		</td>
+		<td>
+			<div isteven-multi-select input-model="data.animaltest.dogrecommendations"
+				output-model="data.outputanimaltest.dogrecommendations" button-label="name"
+				item-label="name" tick-property="ticked"></div>
+		</td>
+		<td ng-show="form.containsOther(data.outputanimaltest.dogrecommendations)" >
+			<label>Other: </label>
+			<input id="dogrecommendationsother" />
+		</td>
+	</tr>
+</table>
+<h2>Cat test</h2>
+<table>
+	<tr>
+		<td>
+			<strong>Previously tested</strong>
+		</td>
+		<td>
+			<label style="font-weight:normal;">
+				<input type="radio" ng-model="data.animaltest.catprevtested" value="true" /> 
+				Yes
+			</label> 
+			<label style="font-weight:normal;"> 
+				<input type="radio" ng-model="data.animaltest.catprevtested" value="false" /> 
+				No
+			</label>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<strong>Dog friendly cat</strong>
+		</td>
+		<td>
+			<label style="font-weight:normal;">
+				<input type="radio" ng-model="data.animaltest.catdogfriendly" value="yes" /> 
+				Yes
+			</label> 
+			<label style="font-weight:normal;">
+				<input type="radio" ng-model="data.animaltest.catdogfriendly" value="no" /> 
+				No
+			</label>
+			<label style="font-weight:normal;">
+				<input type="radio" ng-model="data.animaltest.catdogfriendly" value="unkown" /> 
+				Unkown
+			</label>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<strong>Needs further testing</strong>
+		</td>
+		<td>
+			<label style="font-weight:normal;">
+				<input type="radio" ng-model="data.animaltest.dogfurthertesting" value="yes" /> 
+				Yes
+			</label> 
+			<label style="font-weight:normal;">
+				<input type="radio" ng-model="data.animaltest.dogfurthertesting" value="no" /> 
+				No
+			</label>
+			<label style="font-weight:normal;">
+				<input type="radio" ng-model="data.animaltest.dogfurthertesting" value="unkown" /> 
+				Unkown
+			</label>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<label>Initial Reaction</label>
+		</td>
+		<td>
+			<div isteven-multi-select input-model="data.animaltest.initialcat"
+				output-model="data.outputanimaltest.initialcat" button-label="name"
+				item-label="name" tick-property="ticked"></div>
+		</td>
+		<td ng-show="form.containsOther(data.outputanimaltest.initialcat)" >
+			<label>Other: </label>
+			<input id="initialcatother" />
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<label>After meeting</label>
+		</td>
+		<td>
+			<div isteven-multi-select input-model="data.animaltest.aftercat"
+				output-model="data.outputanimaltest.aftercat" button-label="name"
+				item-label="name" tick-property="ticked"></div>
+		</td>
+		<td ng-show="form.containsOther(data.outputanimaltest.aftercat)" >
+			<label>Other: </label>
+			<input id="aftercatother" />
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<label>Recommendations</label>
+		</td>
+		<td>
+			<div isteven-multi-select input-model="data.animaltest.catrecommendations"
+				output-model="data.outputanimaltest.catrecommendations" button-label="name"
+				item-label="name" tick-property="ticked"></div>
+		</td>
+		<td ng-show="form.containsOther(data.outputanimaltest.catrecommendations)" >
+			<label>Other: </label>
+			<input id="catrecommendationsother" />
+		</td>
+	</tr>
+</table>
