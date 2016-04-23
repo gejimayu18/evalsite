@@ -1,0 +1,226 @@
+<h2>Resources</h2>
+<h3>Treats</h3>
+<table>
+	<tr>
+		<td>
+			<label>Taking treats</label>
+			<div isteven-multi-select input-model="data.treats.takingtreatsbehaviors"
+				output-model="data.outputtreats.takingtreatsbehaviors" button-label="name"
+				item-label="name" tick-property="ticked"></div>
+		</td>
+		<td ng-show="form.containsOther(data.outputtreats.takingtreatsbehaviors)" >
+			<label>Other: </label>
+			<input id="takingtreatsbehaviorother" />
+		</td>
+		<td>
+			<label>Treats used</label>
+			<div isteven-multi-select input-model="data.treats.treatsused"
+				output-model="data.outputtreats.treatsused" button-label="name"
+				item-label="name" tick-property="ticked"></div>
+		</td>
+		<td ng-show="form.containsOther(data.outputtreats.treatsused)" >
+			<label>Other: </label>
+			<input id="treatsusedbehaviorother" />
+		<td>
+			<label>Commands</label>
+			<div isteven-multi-select input-model="data.treats.commands"
+				output-model="data.outputtreats.commands" button-label="name"
+				item-label="name" tick-property="ticked"></div>
+		</td>
+		<td ng-show="form.containsOther(data.outputtreats.commands)" >
+			<label>Other: </label>
+			<input id="commandsbehaviorother" />
+		</td>
+	</tr>
+</table>
+<h3>Toy</h3>
+<table>
+	<tr>
+		<td>
+			<label>Toy used</label>
+		</td>
+		<td>
+			<input ng-model="data.outputtoys.used1" id="toyused1" />
+		</td>
+		<td>
+			<input ng-model="data.outputtoys.used2" id="toyused2" />
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<label>Hand</label>
+		</td>
+		<td>
+			<div isteven-multi-select input-model="data.toys.hands"
+				output-model="data.outputtoys.hands" button-label="name"
+				item-label="name" tick-property="ticked"></div>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<label>Interest</label>
+		</td>
+		<td>
+			<div isteven-multi-select input-model="data.toys.interest"
+				output-model="data.outputtoys.interest" button-label="name"
+				item-label="name" tick-property="ticked"></div>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<label>Behaviors</label>
+		</td>
+		<td>
+			<div isteven-multi-select input-model="data.toys.toysbehavior"
+				output-model="data.outputtoys.toysbehavior" button-label="name"
+				item-label="name" tick-property="ticked"></div>
+		</td>
+		<td ng-show="form.containsOther(data.outputtoys.toysbehavior)" >
+			<label>Other: </label>
+			<input id="toysbehaviorother" />
+		</td>
+	</tr>
+</table>
+<h3>Bone</h3>
+<table>
+	<tr>
+		<td>
+			<label>Toy used</label>
+		</td>
+		<td>
+			<input ng-model="data.outputbones.used1" id="boneused1" />
+		</td>
+		<td>
+			<input ng-model="data.outputbones.used2" id="boneused2" />
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<label>Hand</label>
+		</td>
+		<td>
+			<div isteven-multi-select input-model="data.bones.hands"
+				output-model="data.outputbones.hands" button-label="name"
+				item-label="name" tick-property="ticked"></div>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<label>Interest</label>
+		</td>
+		<td>
+			<div isteven-multi-select input-model="data.bones.interest"
+				output-model="data.outputbones.interest" button-label="name"
+				item-label="name" tick-property="ticked"></div>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<label>Behaviors</label>
+		</td>
+		<td>
+			<div isteven-multi-select input-model="data.bones.bonesbehavior"
+				output-model="data.outputbones.bonesbehavior" button-label="name"
+				item-label="name" tick-property="ticked"></div>
+		</td>
+		<td ng-show="form.containsOther(data.outputbones.bonesbehavior)" >
+			<label>Other: </label>
+			<input id="bonesbehaviorother" />
+		</td>
+	</tr>
+</table>
+<h3>Food</h3>
+<table>
+	<tr>
+		<td><strong>Treats used to coax dog</strong></td>
+		<td>
+			<label> 
+				<input type="radio" ng-model="data.food.coax" value="true" /> 
+				Yes
+			</label> 
+			<label> 
+				<input type="radio" ng-model="data.food.coax" value="false" /> 
+				No
+			</label>
+		</td>
+		<td>
+			<label>Hand</label>
+		</td>
+		<td>
+			<div isteven-multi-select input-model="data.food.hands"
+				output-model="data.outputfood.hands" button-label="name"
+				item-label="name" tick-property="ticked"></div>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<label>Interest</label>
+		</td>
+		<td>
+			<div isteven-multi-select input-model="data.food.interest"
+				output-model="data.outputfood.interest" button-label="name"
+				item-label="name" tick-property="ticked"></div>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<label>Initial Delivery Behaviors</label>
+		</td>
+		<td>
+			<div isteven-multi-select input-model="data.food.delivery"
+				output-model="data.outputfood.delivery" button-label="name"
+				item-label="name" tick-property="ticked"></div>
+		</td>
+		<td ng-show="form.containsOther(data.outputfood.delivery)" >
+			<label>Other: </label>
+			<input id="foodinitdeliverybehaviorother" />
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<label>Initial Approach Behaviors</label>
+		</td>
+		<td>
+			<div isteven-multi-select input-model="data.food.initialapproach"
+				output-model="data.outputfood.initialapproach" button-label="name"
+				item-label="name" tick-property="ticked"></div>
+		</td>
+		<td ng-show="form.containsOther(data.outputbones.initialapproach)" >
+			<label>Other: </label>
+			<input id="initialapproachother" />
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<label>Touch Dog Behaviors</label>
+		</td>
+		<td>
+			<div isteven-multi-select input-model="data.food.touchdog"
+				output-model="data.outputfood.touchdog" button-label="name"
+				item-label="name" tick-property="ticked"></div>
+		</td>
+		<td ng-show="form.containsOther(data.outputbones.touchdog)" >
+			<label>Other: </label>
+			<input id="touchdogother" />
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<label>Touch Bowl Behaviors</label>
+		</td>
+		<td>
+			<div isteven-multi-select input-model="data.food.touchbowl"
+				output-model="data.outputfood.touchbowl" button-label="name"
+				item-label="name" tick-property="ticked"></div>
+		</td>
+		<td ng-show="form.containsOther(data.outputbones.touchbowl)" >
+			<label>Other: </label>
+			<input id="touchbowlother" />
+		</td>
+	</tr>
+</table>
+<label>Resources comments</label>
+<br />
+<textarea id="resourcesBehaviorComments" rows="{{form.commentHeight}}"
+	cols="{{form.commentWidth}}">
+</textarea>

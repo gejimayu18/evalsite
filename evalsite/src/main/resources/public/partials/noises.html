@@ -1,0 +1,92 @@
+<h2>Noises</h2>
+<h3>Loud noise</h3>
+<table>
+	<tr>
+		<td>
+			<label>Initial Reaction</label>
+			<div isteven-multi-select input-model="data.noises.initialloudnoise"
+				output-model="data.outputnoises.initialloudnoise" button-label="name"
+				item-label="name" tick-property="ticked"></div>
+		</td>
+		<td ng-show="form.containsOther(data.outputnoises.initialloudnoise)" >
+			<label>Other: </label>
+			<input id="initialloudnoiseother" />
+		</td>
+		<td>
+			<label>Recovery</label>
+			<div isteven-multi-select input-model="data.noises.recoverloudnoise"
+				output-model="data.outputnoises.recoverloudnoise" button-label="name"
+				item-label="name" tick-property="ticked"></div>
+		</td>
+		<td ng-show="form.containsOther(data.outputnoises.recoverloudnoise)" >
+			<label>Other: </label>
+			<input id="recoverloudnoiseother" />
+	</tr>
+</table>
+<h3>Scolding</h3>
+<table>
+	<tr>
+		<td>
+			<label>Initial Reaction</label>
+			<div isteven-multi-select input-model="data.noises.initialscold"
+				output-model="data.outputnoises.initialscold" button-label="name"
+				item-label="name" tick-property="ticked"></div>
+		</td>
+		<td ng-show="form.containsOther(data.outputnoises.initialscold)" >
+			<label>Other: </label>
+			<input id="initialscoldother" />
+		</td>
+		<td>
+			<label>Recovery</label>
+			<div isteven-multi-select input-model="data.noises.recoverscold"
+				output-model="data.outputnoises.recoverscold" button-label="name"
+				item-label="name" tick-property="ticked"></div>
+		</td>
+		<td ng-show="form.containsOther(data.outputnoises.recoverscold)" >
+			<label>Other: </label>
+			<input id="recoverscoldother" />
+		</td>
+	</tr>
+</table>
+<h3>Door</h3>
+<table>
+	<tr>
+		<td>
+			<label>Knock At Door</label>
+			<div isteven-multi-select input-model="data.noises.initialknockatdoor"
+				output-model="data.outputnoises.initialknockatdoor" button-label="name"
+				item-label="name" tick-property="ticked"></div>
+		</td>
+		<td ng-show="form.containsOther(data.outputnoises.initialknockatdoor)" >
+			<label>Other: </label>
+			<input id="initialknockatdoorother" />
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<strong>Stranger</strong>
+			<label> 
+				<input type="radio" ng-model="data.reeval" value="male" /> 
+				Male
+			</label> 
+			<label> 
+				<input type="radio" ng-model="data.reeval" value="female" /> 
+				Female
+			</label>
+		</td>
+		<td>
+			<div isteven-multi-select input-model="data.noises.stranger"
+				output-model="data.outputnoises.stranger" button-label="name"
+				item-label="name" tick-property="ticked"></div>
+		</td>
+		<td ng-show="form.containsOther(data.outputnoises.stranger)" >
+			<label>Other: </label>
+			<input id="strangerother" />
+		</td>
+	</tr>
+</table>
+<label>Noises comments</label>
+<br />
+<textarea id="resourcesBehaviorComments" rows="{{form.commentHeight}}"
+	cols="{{form.commentWidth}}">
+</textarea>

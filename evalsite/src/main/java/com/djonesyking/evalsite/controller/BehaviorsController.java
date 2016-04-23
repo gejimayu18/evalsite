@@ -1,5 +1,8 @@
 package com.djonesyking.evalsite.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -61,17 +64,11 @@ public class BehaviorsController {
     }
 	private BehaviorList buildSociabilityList() {
 		BehaviorList list = new BehaviorList();
-    	list.addBehavior(new Behavior("Soft Eyes"));
-    	list.addBehavior(new Behavior("Hard Eyes"));
-    	list.addBehavior(new Behavior("Whale Eyes"));
+		list.addListOfBehaviors(getEyeList());
     	list.addBehavior(new Behavior("Ears Back"));
     	list.addBehavior(new Behavior("Ears Forward"));
     	list.addBehavior(new Behavior("Ears side"));
-    	list.addBehavior(new Behavior("Low Tail"));
-    	list.addBehavior(new Behavior("Medium Tail"));
-    	list.addBehavior(new Behavior("High Tail"));
-    	list.addBehavior(new Behavior("Tucked Tail"));
-    	list.addBehavior(new Behavior("Wagging Tail"));
+    	list.addListOfBehaviors(getTailList());
     	list.addBehavior(new Behavior("other"));
     	return list;
 	}
@@ -106,6 +103,194 @@ public class BehaviorsController {
 		list.addBehavior(new Behavior("other"));
 		return list;
 	}
-    
+	@RequestMapping("treats/takingtreats")
+	public BehaviorList getTakingTreatsBehaviors() {
+		BehaviorList list = new BehaviorList();
+		list.addBehavior(new Behavior("Gentle"));
+		list.addBehavior(new Behavior("Grabby hard"));
+		list.addBehavior(new Behavior("Grabby soft"));
+		list.addBehavior(new Behavior("Grabby soft but intense"));
+		list.addBehavior(new Behavior("Grabby hard and intense"));
+		list.addBehavior(new Behavior("Gentle at first then grabby"));
+		list.addBehavior(new Behavior("Food Motivated - hyper & pushy"));
+		list.addBehavior(new Behavior("Food Motivated - attentive & respectful"));
+		list.addBehavior(new Behavior("Food Motivated - hyper but respectful"));
+		list.addBehavior(new Behavior("Wouldn't eat"));
+		list.addBehavior(new Behavior("other"));
+		return list;
+	}
+	
+	@RequestMapping("treats/treatsused")
+	public BehaviorList getTreats() {
+		BehaviorList list = new BehaviorList();
+		list.addBehavior(new Behavior("Hot dog"));
+		list.addBehavior(new Behavior("Cheese"));
+		list.addBehavior(new Behavior("Log food"));
+		list.addBehavior(new Behavior("other"));
+		return list;
+	}
+	@RequestMapping("treats/commands")
+	public BehaviorList getCommands() {
+		BehaviorList list = new BehaviorList();
+		list.addBehavior(new Behavior("None"));
+		list.addBehavior(new Behavior("Sit"));
+		list.addBehavior(new Behavior("Down"));
+		list.addBehavior(new Behavior("Paw"));
+		list.addBehavior(new Behavior("Come"));
+		list.addBehavior(new Behavior("Stay"));
+		list.addBehavior(new Behavior("Speak"));
+		list.addBehavior(new Behavior("other"));
+		return list;
+	}
+	@RequestMapping("resources/handused")
+	public BehaviorList getHandUsed() {
+		BehaviorList list = new BehaviorList();
+		list.addBehavior(new Behavior("Real Hand"));
+		list.addBehavior(new Behavior("Fake Hand"));
+		return list;
+	}
+	@RequestMapping("resources/interest")
+	public BehaviorList getInterest() {
+		BehaviorList list = new BehaviorList();
+		list.addBehavior(new Behavior("No interest"));
+		list.addBehavior(new Behavior("No guarding seen"));
+		list.addBehavior(new Behavior("Guarded mildly"));
+		list.addBehavior(new Behavior("Guarded intensely"));
+		list.addBehavior(new Behavior("Guarded space"));
+		return list;
+	}
+	@RequestMapping("toys")
+	public BehaviorList getToysBehaviors() {
+		BehaviorList list = new BehaviorList();
+		list.addBehavior(new Behavior("Playful - hyper"));
+		list.addBehavior(new Behavior("Playful - gentle"));
+		list.addBehavior(new Behavior("Playful - intense"));
+		list.addBehavior(new Behavior("Playful - average"));
+		list.addBehavior(new Behavior("Engages with you"));
+		list.addBehavior(new Behavior("Plays by self"));
+		list.addBehavior(new Behavior("Chews like a bone"));
+		list.addBehavior(new Behavior("Plays keep away"));
+		list.addBehavior(new Behavior("other"));
+		return list;
+	}
+	@RequestMapping("bones")
+	public BehaviorList getBonesBehaviors() {
+		BehaviorList list = new BehaviorList();
+		list.addBehavior(new Behavior("Playful - hyper"));
+		list.addBehavior(new Behavior("Playful - gentle"));
+		list.addBehavior(new Behavior("Playful - intense"));
+		list.addBehavior(new Behavior("Playful - average"));
+		list.addBehavior(new Behavior("Engages with you"));
+		list.addBehavior(new Behavior("Plays by self"));
+		list.addBehavior(new Behavior("Chews like a bone"));
+		list.addBehavior(new Behavior("Plays keep away"));
+		list.addBehavior(new Behavior("other"));
+		return list;
+	}
+	@RequestMapping("food/delivery")
+	public BehaviorList getFoodDelivery() {
+		BehaviorList list = new BehaviorList();
+		list.addBehavior(new Behavior("Loose body"));
+		list.addBehavior(new Behavior("Excited jumping"));
+		list.addBehavior(new Behavior("Counter surfing"));
+		list.addBehavior(new Behavior("Jumps for bowl mild"));
+		list.addBehavior(new Behavior("Jumps for bowl intense"));
+		list.addBehavior(new Behavior("Sits for bowl"));
+		list.addBehavior(new Behavior("Sniffs and walks away"));
+		list.addBehavior(new Behavior("Will not approach"));
+		list.addBehavior(new Behavior("Eats slow"));
+		list.addBehavior(new Behavior("Eats normal"));
+		list.addBehavior(new Behavior("Eats fast"));
+		return list;
+	}
+	@RequestMapping("food/behaviors")
+	public BehaviorList getFoodBehaviors() {
+		BehaviorList list = new BehaviorList();
+		list.addBehavior(new Behavior("Loose body"));
+		list.addBehavior(new Behavior("Tense and unsure"));
+		list.addListOfBehaviors(getTailList());
+		list.addBehavior(new Behavior("Pause - keeps eating"));
+		list.addBehavior(new Behavior("Moves away from bowl"));
+		list.addBehavior(new Behavior("Eats faster"));
+		list.addBehavior(new Behavior("Body block"));
+		list.addBehavior(new Behavior("Freeze"));
+		list.addBehavior(new Behavior("Growl"));
+		list.addBehavior(new Behavior("Snarl"));
+		list.addBehavior(new Behavior("Snap"));
+		list.addBehavior(new Behavior("Bite"));
+		list.addBehavior(new Behavior("No change"));
+		list.addBehavior(new Behavior("other"));
+		return list;
+	}
+	@RequestMapping("noises/initial")
+	public BehaviorList getInitialNoiseBehaviors() {
+		BehaviorList list = new BehaviorList();
+		list.addBehavior(new Behavior("Alert"));
+		list.addBehavior(new Behavior("Curious"));
+		list.addBehavior(new Behavior("Sits"));
+		list.addBehavior(new Behavior("Startled"));
+		list.addBehavior(new Behavior("Uneasy and nervous"));
+		list.addBehavior(new Behavior("Runs away"));
+		list.addBehavior(new Behavior("Submissive"));
+		list.addBehavior(new Behavior("Submissive and unsure"));
+		list.addBehavior(new Behavior("Oblivious"));
+		list.addBehavior(new Behavior("Stiffens"));
+		list.addBehavior(new Behavior("Barks"));
+		list.addBehavior(new Behavior("Hackles up"));
+		list.addBehavior(new Behavior("Hard stare"));
+		list.addBehavior(new Behavior("other"));
+		return list;
+	}
+	@RequestMapping("noises/recover")
+	public BehaviorList getRecoveryNoiseBehaviors() {
+		BehaviorList list = new BehaviorList();
+		list.addBehavior(new Behavior("Investigatres"));
+		list.addBehavior(new Behavior("Comes to people"));
+		list.addBehavior(new Behavior("Cowers"));
+		list.addBehavior(new Behavior("Hides behind handler"));
+		list.addListOfBehaviors(getEyeList());
+		list.addListOfBehaviors(getTailList());
+		list.addBehavior(new Behavior("Needs food to relax"));
+		list.addBehavior(new Behavior("Shake off"));
+		list.addBehavior(new Behavior("Lip licks"));
+		list.addBehavior(new Behavior("Will not relax"));
+		list.addBehavior(new Behavior("other"));
+		return list;
+	}
+	@RequestMapping("noises/stranger")
+	public BehaviorList getStrangerNoisesBehaviors() {
+		BehaviorList list = getRecoveryNoiseBehaviors();
+		list.addBehavior(new Behavior("Playful"));
+		list.addBehavior(new Behavior("Hyper"));
+		list.addBehavior(new Behavior("Rough jumping"));
+		list.addBehavior(new Behavior("Stands still"));
+		list.addListOfBehaviors(getEyeList());
+		list.addListOfBehaviors(getTailList());
+		list.addBehavior(new Behavior("Needs food to relax"));
+		list.addBehavior(new Behavior("Shake off"));
+		list.addBehavior(new Behavior("Lip licks"));
+		list.addBehavior(new Behavior("Will not relax"));
+		list.addBehavior(new Behavior("other"));
+		return list;
+	}
+	
+	private List<Behavior> getTailList() {
+		List<Behavior> list = new ArrayList<Behavior>();
+		list.add(new Behavior("Low Tail"));
+    	list.add(new Behavior("Medium Tail"));
+    	list.add(new Behavior("High Tail"));
+    	list.add(new Behavior("Tucked Tail"));
+    	list.add(new Behavior("Wagging Tail"));
+    	list.add(new Behavior("Relaxed Tail"));
+    	return list;
+	}
+	
+	private List<Behavior> getEyeList() {
+		List<Behavior> list = new ArrayList<Behavior>();
+		list.add(new Behavior("Soft eyes"));
+		list.add(new Behavior("Hard eyes"));
+		list.add(new Behavior("Whale eyes"));
+		return list;
+	}
 
 }

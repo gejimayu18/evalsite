@@ -17,6 +17,9 @@ public class BehaviorList {
 	public void addBehavior(Behavior behavior) {
 		this.behaviorList.add(behavior);
 	}
+	public void addListOfBehaviors(List<Behavior> behaviorList) {
+		this.behaviorList.addAll(behaviorList);
+	}
 	
 
 }
