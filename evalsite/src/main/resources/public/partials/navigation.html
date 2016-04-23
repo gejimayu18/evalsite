@@ -27,3 +27,8 @@
 	<span ng-switch-when='animaltest'>Animal test</span>
 	<span ng-switch-default><a class="navlinks" ng-click="form.mode = 'animaltest'">Animal test</a></span> 
 </span> 
+<span> | </span> 
+<span ng-switch on="form.mode">
+	<span ng-switch-when='recommendations'>Recommendations</span>
+	<span ng-switch-default><a class="navlinks" ng-click="form.mode = 'recommendations'">Recommendations</a></span> 
+</span> 

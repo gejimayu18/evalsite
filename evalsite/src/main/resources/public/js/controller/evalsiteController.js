@@ -25,6 +25,8 @@
 			$scope.data.outputdolls = {};
 			$scope.data.animaltest = {};
 			$scope.data.outputanimaltest = {};
+			$scope.data.recommendations = {};
+			$scope.data.outputrecommendations = {};
 			$scope.form.commentWidth = 100;
 			$scope.form.commentHeight = 4;
 			$scope.form.mode = 'sociability';
@@ -190,6 +192,37 @@
 			evalsiteRESTService.getBehaviors('animaltest/catrecommendations').get(
 					function (response) {
 						$scope.data.animaltest.catrecommendations = angular.copy(response.behaviorList);
+					},
+					function () {}
+			);
+			evalsiteRESTService.getBehaviors('recommendations/walker').get(
+					function (response) {
+						$scope.data.recommendations.walker = angular.copy(response.behaviorList);
+					},
+					function () {}
+			);
+			evalsiteRESTService.getBehaviors('recommendations/kids').get(
+					function (response) {
+						$scope.data.recommendations.kids = angular.copy(response.behaviorList);
+					},
+					function () {}
+			);
+			
+			evalsiteRESTService.getBehaviors('recommendations/personality').get(
+					function (response) {
+						$scope.data.recommendations.personality = angular.copy(response.behaviorList);
+					},
+					function () {}
+			);
+			evalsiteRESTService.getBehaviors('recommendations/household').get(
+					function (response) {
+						$scope.data.recommendations.household = angular.copy(response.behaviorList);
+					},
+					function () {}
+			);
+			evalsiteRESTService.getBehaviors('recommendations/waivers').get(
+					function (response) {
+						$scope.data.recommendations.waivers = angular.copy(response.behaviorList);
 					},
 					function () {}
 			);

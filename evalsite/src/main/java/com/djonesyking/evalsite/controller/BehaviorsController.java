@@ -352,6 +352,73 @@ public class BehaviorsController {
 		list.addBehavior(new Behavior("other"));
 		return list;
 	}
+	@RequestMapping("recommendations/walker")
+	public BehaviorList getWalkerRecommendation() {
+		BehaviorList list = new BehaviorList();
+		list.addBehavior(new Behavior("Red"));
+		list.addBehavior(new Behavior("Orange"));
+		list.addBehavior(new Behavior("Yellow"));
+		list.addBehavior(new Behavior("Blue"));
+		list.addBehavior(new Behavior("Green"));
+		return list;
+	}
+	
+	@RequestMapping("recommendations/kids")
+	public BehaviorList getKidsRecommendation() {
+		BehaviorList list = new BehaviorList();
+		list.addBehavior(new Behavior("Young kids"));
+		list.addBehavior(new Behavior("Older kids"));
+		list.addBehavior(new Behavior("Adult only"));
+		list.addBehavior(new Behavior("Any age"));
+		return list;
+	}
+	@RequestMapping("recommendations/personality")
+	public BehaviorList getPersonalityRecommendation() {
+		BehaviorList list = new BehaviorList();
+		list.addBehavior(new Behavior("Sweet"));
+		list.addBehavior(new Behavior("Cuddly"));
+		list.addBehavior(new Behavior("Playful"));
+		list.addBehavior(new Behavior("Puppy-like"));
+		list.addBehavior(new Behavior("Calm"));
+		list.addBehavior(new Behavior("Gentle"));
+		list.addBehavior(new Behavior("Hyper"));
+		list.addBehavior(new Behavior("Sensitive"));
+		list.addBehavior(new Behavior("Shy"));
+		list.addBehavior(new Behavior("Food motivated"));
+		list.addBehavior(new Behavior("Counter surfer"));
+		list.addBehavior(new Behavior("other"));
+		return list;
+	}
+	@RequestMapping("recommendations/household")
+	public BehaviorList getHouseholdRecommendation() {
+		BehaviorList list = new BehaviorList();
+		list.addBehavior(new Behavior("Great for first time pet owner"));
+		list.addBehavior(new Behavior("Home with few visitors"));
+		list.addBehavior(new Behavior("Quiet and calm"));
+		list.addBehavior(new Behavior("Needs experience: Similar behaviors"));
+		list.addBehavior(new Behavior("Needs experience: Same size dogs"));
+		list.addBehavior(new Behavior("Needs experience: Same energy level"));
+		list.addBehavior(new Behavior("Needs experience: Same breed(s)"));
+		list.addBehavior(new Behavior("Needs dog in home"));
+		list.addBehavior(new Behavior("Needs cat in home"));
+		list.addBehavior(new Behavior("Needs kids in home"));
+		list.addBehavior(new Behavior("Adult only"));
+		list.addBehavior(new Behavior("Highly experienced owners"));
+		list.addBehavior(new Behavior("Moderately active home"));
+		list.addBehavior(new Behavior("Extremely active home"));
+		list.addBehavior(new Behavior("other"));
+		return list;
+	}
+	@RequestMapping("recommendations/waivers")
+	public BehaviorList getWaiversRecommendation() {
+		BehaviorList list = new BehaviorList();
+		list.addBehavior(new Behavior("Dog aggression"));
+		list.addBehavior(new Behavior("Resource guarding"));
+		list.addBehavior(new Behavior("Fearful behavior"));
+		list.addBehavior(new Behavior("Jumpy/mouthy behavior"));
+		list.addBehavior(new Behavior("Assertive behavior"));
+		return list;
+	}
 	
 	private List<Behavior> getTailList() {
 		List<Behavior> list = new ArrayList<Behavior>();

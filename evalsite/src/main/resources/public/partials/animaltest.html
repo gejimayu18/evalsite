@@ -5,11 +5,11 @@
 			<strong>Previously tested</strong>
 		</td>
 		<td>
-			<label style="font-weight:normal;"> 
+			<label class="radiolabel">  
 				<input type="radio" ng-model="data.animaltest.dogprevtested" value="true" /> 
 				Yes
 			</label> 
-			<label style="font-weight:normal;">
+			<label class="radiolabel"> 
 				<input type="radio" ng-model="data.animaltest.dogprevtested" value="false" /> 
 				No
 			</label>
@@ -20,15 +20,15 @@
 			<strong>Dog in playgroup</strong>
 		</td>
 		<td>
-			<label style="font-weight:normal;"> 
+			<label class="radiolabel">  
 				<input type="radio" ng-model="data.animaltest.dogplaygroup" value="yes" /> 
 				Yes
 			</label> 
-			<label style="font-weight:normal;">
+			<label class="radiolabel"> 
 				<input type="radio" ng-model="data.animaltest.dogplaygroup" value="no" /> 
 				No
 			</label>
-			<label style="font-weight:normal;">
+			<label class="radiolabel"> 
 				<input type="radio" ng-model="data.animaltest.dogplaygroup" value="unkown" /> 
 				Unkown
 			</label>
@@ -39,15 +39,15 @@
 			<strong>Needs further testing</strong>
 		</td>
 		<td>
-			<label style="font-weight:normal;">
+			<label class="radiolabel"> 
 				<input type="radio" ng-model="data.animaltest.dogfurthertesting" value="yes" /> 
 				Yes
 			</label> 
-			<label style="font-weight:normal;">
+			<label class="radiolabel"> 
 				<input type="radio" ng-model="data.animaltest.dogfurthertesting" value="no" /> 
 				No
 			</label>
-			<label style="font-weight:normal;"> 
+			<label class="radiolabel">  
 				<input type="radio" ng-model="data.animaltest.dogfurthertesting" value="unkown" /> 
 				Unkown
 			</label>
@@ -89,11 +89,11 @@
 			<strong>Previously tested</strong>
 		</td>
 		<td>
-			<label style="font-weight:normal;">
+			<label class="radiolabel"> 
 				<input type="radio" ng-model="data.animaltest.catprevtested" value="true" /> 
 				Yes
 			</label> 
-			<label style="font-weight:normal;"> 
+			<label class="radiolabel">  
 				<input type="radio" ng-model="data.animaltest.catprevtested" value="false" /> 
 				No
 			</label>
@@ -104,15 +104,15 @@
 			<strong>Dog friendly cat</strong>
 		</td>
 		<td>
-			<label style="font-weight:normal;">
+			<label class="radiolabel"> 
 				<input type="radio" ng-model="data.animaltest.catdogfriendly" value="yes" /> 
 				Yes
 			</label> 
-			<label style="font-weight:normal;">
+			<label class="radiolabel"> 
 				<input type="radio" ng-model="data.animaltest.catdogfriendly" value="no" /> 
 				No
 			</label>
-			<label style="font-weight:normal;">
+			<label class="radiolabel"> 
 				<input type="radio" ng-model="data.animaltest.catdogfriendly" value="unkown" /> 
 				Unkown
 			</label>
@@ -123,15 +123,15 @@
 			<strong>Needs further testing</strong>
 		</td>
 		<td>
-			<label style="font-weight:normal;">
+			<label class="radiolabel"> 
 				<input type="radio" ng-model="data.animaltest.dogfurthertesting" value="yes" /> 
 				Yes
 			</label> 
-			<label style="font-weight:normal;">
+			<label class="radiolabel"> 
 				<input type="radio" ng-model="data.animaltest.dogfurthertesting" value="no" /> 
 				No
 			</label>
-			<label style="font-weight:normal;">
+			<label class="radiolabel"> 
 				<input type="radio" ng-model="data.animaltest.dogfurthertesting" value="unkown" /> 
 				Unkown
 			</label>
@@ -180,3 +180,9 @@
 		</td>
 	</tr>
 </table>
+<div>
+	<label>Cat test comments</label><br />
+	<textarea id="catTestComments" rows="{{form.commentHeight}}"
+		cols="{{form.commentWidth}}">
+	</textarea>
+</div>

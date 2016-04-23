@@ -1,0 +1,96 @@
+<h2>Recommendations and Requirements</h2>
+<table>
+	<tr>
+		<td>
+			<strong>Sociability change during eval</strong>
+		</td>
+		<td>
+			<label class="radiolabel"> 
+				<input type="radio" ng-model="data.recommendations.sociabilitychanged" value="better" /> 
+				Better
+			</label> 
+			<label class="radiolabel"> 
+				<input type="radio" ng-model="data.recommendations.sociabilitychanged" value="worse" /> 
+				Worse
+			</label>
+			<label class="radiolabel"> 
+				<input type="radio" ng-model="data.recommendations.sociabilitychanged" value="same" /> 
+				Same
+			</label>
+		</td>
+		<td>
+			<input id="sociabilityChangeComments" />
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<strong>Walker</strong>
+		</td>
+		<td>
+			<div isteven-multi-select input-model="data.recommendations.walker"
+				output-model="data.outputrecommendations.walker" button-label="name"
+				item-label="name" tick-property="ticked"></div>
+		</td>
+		<td>
+			<input id="walkerRecommendationNotes" />
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<strong>Kids</strong>
+		</td>
+		<td>
+			<div isteven-multi-select input-model="data.recommendations.kids"
+				output-model="data.outputrecommendations.kids" button-label="name"
+				item-label="name" tick-property="ticked"></div>
+		</td>
+		<td>
+			<input id="kidsRecommendationNotes" />
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<strong>Personality</strong>
+		</td>
+		<td>
+			<div isteven-multi-select input-model="data.recommendations.personality"
+				output-model="data.outputrecommendations.personality" button-label="name"
+				item-label="name" tick-property="ticked"></div>
+		</td>
+		<td>
+			<input id="personalityRecommendationNotes" />
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<strong>Household</strong>
+		</td>
+		<td>
+			<div isteven-multi-select input-model="data.recommendations.household"
+				output-model="data.outputrecommendations.household" button-label="name"
+				item-label="name" tick-property="ticked"></div>
+		</td>
+		<td>
+			<input id="householdRecommendationNotes" />
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<strong>Counseling/Waivers</strong>
+		</td>
+		<td>
+			<div isteven-multi-select input-model="data.recommendations.waivers"
+				output-model="data.outputrecommendations.waivers" button-label="name"
+				item-label="name" tick-property="ticked"></div>
+		</td>
+		<td>
+			<input id="waiversRecommendationNotes" />
+		</td>
+	</tr>
+</table>
+<div>
+	<label>Comments</label><br />
+	<textarea id="recommendationComments" rows="{{form.commentHeight}}"
+		cols="{{form.commentWidth}}">
+	</textarea>
+</div>
