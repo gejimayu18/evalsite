@@ -4,7 +4,8 @@
 	angular.module("EvalsiteRESTService", ["ngResource"])
 		.factory("evalsiteRESTService", ["$resource", function($resource) {
 			var serviceURL = "rest",
-			getBehaviors;
+			getBehaviors,
+			submitEval;
 			
 			getBehaviors = function (type) {
 				return $resource(
@@ -16,8 +17,19 @@
 				);
 			};
 			
+			submitEval = function() {
+				return $resource(
+						serviceURL + "/behaviors/submit",
+						null,
+						{
+							save: {method: "POST"}
+						}
+				);
+			};
+			
 			return {
-				getBehaviors: getBehaviors
+				getBehaviors: getBehaviors,
+				submitEval: submitEval
 			};
 		}]);
 }(window.angular));

@@ -1,34 +1,34 @@
 <span ng-switch on="form.mode">
 	<span ng-switch-when='sociability'>Sociability</span>
-	<span ng-switch-default><a class="navlinks" ng-click="form.mode = 'sociability'">Sociability</a></span>
+	<span ng-switch-default><a class="navlinks" ng-click="form.switchTo('sociability')">Sociability</a></span>
 </span>
 <span> | </span> 
 <span ng-switch on="form.mode">
 	<span ng-switch-when='bodyhandling'>Body Handling</span>
-	<span ng-switch-default><a class="navlinks" ng-click="form.mode = 'bodyhandling'">Body Handling</a></span> 
+	<span ng-switch-default><a class="navlinks" ng-click="form.switchTo('bodyhandling')">Body Handling</a></span> 
 </span>
 <span> | </span> 
 <span ng-switch on="form.mode">
 	<span ng-switch-when='resources'>Resources</span>
-	<span ng-switch-default><a class="navlinks" ng-click="form.mode = 'resources'">Resources</a></span> 
+	<span ng-switch-default><a class="navlinks" ng-click="form.switchTo('resources')">Resources</a></span> 
 </span>
 <span> | </span> 
 <span ng-switch on="form.mode">
 	<span ng-switch-when='noises'>Noises</span>
-	<span ng-switch-default><a class="navlinks" ng-click="form.mode = 'noises'">Noises</a></span> 
+	<span ng-switch-default><a class="navlinks" ng-click="form.switchTo('noises')">Noises</a></span> 
 </span>
 <span> | </span>
 <span ng-switch on="form.mode">
 	<span ng-switch-when='dolls'>Dolls</span>
-	<span ng-switch-default><a class="navlinks" ng-click="form.mode = 'dolls'">Dolls</a></span> 
+	<span ng-switch-default><a class="navlinks" ng-click="form.switchTo('dolls')">Dolls</a></span> 
 </span> 
 <span> | </span> 
 <span ng-switch on="form.mode">
 	<span ng-switch-when='animaltest'>Animal test</span>
-	<span ng-switch-default><a class="navlinks" ng-click="form.mode = 'animaltest'">Animal test</a></span> 
+	<span ng-switch-default><a class="navlinks" ng-click="form.switchTo('animaltest')">Animal test</a></span> 
 </span> 
 <span> | </span> 
 <span ng-switch on="form.mode">
 	<span ng-switch-when='recommendations'>Recommendations</span>
-	<span ng-switch-default><a class="navlinks" ng-click="form.mode = 'recommendations'">Recommendations</a></span> 
+	<span ng-switch-default><a class="navlinks" ng-click="form.switchTo('recommendations')">Recommendations</a></span> 
 </span> 

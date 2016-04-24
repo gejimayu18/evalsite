@@ -3,29 +3,29 @@
 	<tr>
 		<td><strong>Pulling dog:</strong></td>
 		<td>
-			<div isteven-multi-select input-model="data.pulldogbehaviors"
-				output-model="data.outputpulldogbehaviors" button-label="name" item-label="name"
+			<div isteven-multi-select input-model="data.input.sociability.pulldogbehaviors"
+				output-model="data.output.sociability.pulldogbehaviors" button-label="name" item-label="name"
 				tick-property="ticked"></div>
 		</td>
-		<td ng-show="form.containsOther(data.outputpulldogbehaviors)" >
+		<td ng-show="form.containsOther(data.output.sociability.pulldogbehaviors)" >
 			<label>Other: </label>
-			<input id="pulldogbehaviorother" />
+			<input id="pulldogbehaviorother" ng-model="data.output.sociability.pulldogbehaviorsother"/>
 		</td>
 	</tr>
 	<tr>
 		<td><strong>Walking:</strong></td>
 		<td>
-			<div isteven-multi-select input-model="data.walkingbehaviors"
-				output-model="data.outputwalkingbehaviors" button-label="name" item-label="name"
+			<div isteven-multi-select input-model="data.input.sociability.walkingbehaviors"
+				output-model="data.output.sociability.walkingbehaviors" button-label="name" item-label="name"
 				tick-property="ticked"></div>
 		</td>
-		<td ng-show="form.containsOther(data.outputwalkingbehaviors)">
+		<td ng-show="form.containsOther(data.output.sociability.walkingbehaviors)">
 			<label>Other: </label>
-			<input id="walkingbehaviorother" />
+			<input id="walkingbehaviorother" ng-model="data.output.sociability.walkingbehaviorother"/>
 		</td>
 	</tr>
 </table>
 <label>Kennel Behavior comments</label>
 <br />
-<textarea id="kennelBehaviorComments" rows="{{form.commentHeight}}" cols="{{form.commentWidth}}">
+<textarea id="kennelBehaviorComments" rows="{{form.commentHeight}}" cols="{{form.commentWidth}}" ng-model="data.output.sociability.kennelbehaviorcomments">
 </textarea>

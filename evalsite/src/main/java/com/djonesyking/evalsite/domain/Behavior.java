@@ -66,6 +66,11 @@ public class Behavior {
 			return false;
 		return true;
 	}
+
+	@Override
+	public String toString() {
+		return "Behavior [name=" + name + ", category=" + category + ", ticked=" + ticked + "]";
+	}
 	
 	
 

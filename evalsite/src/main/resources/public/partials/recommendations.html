@@ -6,20 +6,20 @@
 		</td>
 		<td>
 			<label class="radiolabel"> 
-				<input type="radio" ng-model="data.recommendations.sociabilitychanged" value="better" /> 
+				<input type="radio" ng-model="data.output.recommendations.sociabilitychanged" value="better" /> 
 				Better
 			</label> 
 			<label class="radiolabel"> 
-				<input type="radio" ng-model="data.recommendations.sociabilitychanged" value="worse" /> 
+				<input type="radio" ng-model="data.output.recommendations.sociabilitychanged" value="worse" /> 
 				Worse
 			</label>
 			<label class="radiolabel"> 
-				<input type="radio" ng-model="data.recommendations.sociabilitychanged" value="same" /> 
+				<input type="radio" ng-model="data.output.recommendations.sociabilitychanged" value="same" /> 
 				Same
 			</label>
 		</td>
 		<td>
-			<input id="sociabilityChangeComments" />
+			<input id="sociabilityChangeComments" ng-model="data.output.recommendations.sociabilitycomments"/>
 		</td>
 	</tr>
 	<tr>
@@ -27,12 +27,12 @@
 			<strong>Walker</strong>
 		</td>
 		<td>
-			<div isteven-multi-select input-model="data.recommendations.walker"
-				output-model="data.outputrecommendations.walker" button-label="name"
+			<div isteven-multi-select input-model="data.input.recommendations.walker"
+				output-model="data.output.recommendations.walker" button-label="name"
 				item-label="name" tick-property="ticked"></div>
 		</td>
 		<td>
-			<input id="walkerRecommendationNotes" />
+			<input id="walkerRecommendationNotes" ng-model="data.output.recommendations.walkercomments"/>
 		</td>
 	</tr>
 	<tr>
@@ -40,12 +40,12 @@
 			<strong>Kids</strong>
 		</td>
 		<td>
-			<div isteven-multi-select input-model="data.recommendations.kids"
-				output-model="data.outputrecommendations.kids" button-label="name"
+			<div isteven-multi-select input-model="data.input.recommendations.kids"
+				output-model="data.output.recommendations.kids" button-label="name"
 				item-label="name" tick-property="ticked"></div>
 		</td>
 		<td>
-			<input id="kidsRecommendationNotes" />
+			<input id="kidsRecommendationNotes" ng-model="data.output.recommendations.kidscomments"/>
 		</td>
 	</tr>
 	<tr>
@@ -53,12 +53,12 @@
 			<strong>Personality</strong>
 		</td>
 		<td>
-			<div isteven-multi-select input-model="data.recommendations.personality"
-				output-model="data.outputrecommendations.personality" button-label="name"
+			<div isteven-multi-select input-model="data.input.recommendations.personality"
+				output-model="data.output.recommendations.personality" button-label="name"
 				item-label="name" tick-property="ticked"></div>
 		</td>
 		<td>
-			<input id="personalityRecommendationNotes" />
+			<input id="personalityRecommendationNotes" ng-model="data.output.recommendations.personalitycomments"/>
 		</td>
 	</tr>
 	<tr>
@@ -66,12 +66,12 @@
 			<strong>Household</strong>
 		</td>
 		<td>
-			<div isteven-multi-select input-model="data.recommendations.household"
-				output-model="data.outputrecommendations.household" button-label="name"
+			<div isteven-multi-select input-model="data.input.recommendations.household"
+				output-model="data.output.recommendations.household" button-label="name"
 				item-label="name" tick-property="ticked"></div>
 		</td>
 		<td>
-			<input id="householdRecommendationNotes" />
+			<input id="householdRecommendationNotes" ng-model="data.output.recommendations.householdcomments"/>
 		</td>
 	</tr>
 	<tr>
@@ -79,18 +79,20 @@
 			<strong>Counseling/Waivers</strong>
 		</td>
 		<td>
-			<div isteven-multi-select input-model="data.recommendations.waivers"
-				output-model="data.outputrecommendations.waivers" button-label="name"
+			<div isteven-multi-select input-model="data.input.recommendations.waivers"
+				output-model="data.output.recommendations.waivers" button-label="name"
 				item-label="name" tick-property="ticked"></div>
 		</td>
 		<td>
-			<input id="waiversRecommendationNotes" />
+			<input id="waiversRecommendationNotes" ng-model="data.output.recommendations.waiverscomments"/>
 		</td>
 	</tr>
 </table>
 <div>
 	<label>Comments</label><br />
 	<textarea id="recommendationComments" rows="{{form.commentHeight}}"
-		cols="{{form.commentWidth}}">
+		cols="{{form.commentWidth}}" ng-model="data.output.recommendations.comments">
 	</textarea>
 </div>
+
+<button ng-click="form.submit()">Submit</button>

@@ -6,11 +6,11 @@
 		</td>
 		<td>
 			<label class="radiolabel">  
-				<input type="radio" ng-model="data.animaltest.dogprevtested" value="true" /> 
+				<input type="radio" ng-model="data.output.animaltest.dogprevtested" value="true" /> 
 				Yes
 			</label> 
 			<label class="radiolabel"> 
-				<input type="radio" ng-model="data.animaltest.dogprevtested" value="false" /> 
+				<input type="radio" ng-model="data.output.animaltest.dogprevtested" value="false" /> 
 				No
 			</label>
 		</td>
@@ -21,15 +21,15 @@
 		</td>
 		<td>
 			<label class="radiolabel">  
-				<input type="radio" ng-model="data.animaltest.dogplaygroup" value="yes" /> 
+				<input type="radio" ng-model="data.output.animaltest.dogplaygroup" value="yes" /> 
 				Yes
 			</label> 
 			<label class="radiolabel"> 
-				<input type="radio" ng-model="data.animaltest.dogplaygroup" value="no" /> 
+				<input type="radio" ng-model="data.output.animaltest.dogplaygroup" value="no" /> 
 				No
 			</label>
 			<label class="radiolabel"> 
-				<input type="radio" ng-model="data.animaltest.dogplaygroup" value="unkown" /> 
+				<input type="radio" ng-model="data.output.animaltest.dogplaygroup" value="unkown" /> 
 				Unkown
 			</label>
 		</td>
@@ -40,15 +40,15 @@
 		</td>
 		<td>
 			<label class="radiolabel"> 
-				<input type="radio" ng-model="data.animaltest.dogfurthertesting" value="yes" /> 
+				<input type="radio" ng-model="data.output.animaltest.dogfurthertesting" value="yes" /> 
 				Yes
 			</label> 
 			<label class="radiolabel"> 
-				<input type="radio" ng-model="data.animaltest.dogfurthertesting" value="no" /> 
+				<input type="radio" ng-model="data.output.animaltest.dogfurthertesting" value="no" /> 
 				No
 			</label>
 			<label class="radiolabel">  
-				<input type="radio" ng-model="data.animaltest.dogfurthertesting" value="unkown" /> 
+				<input type="radio" ng-model="data.output.animaltest.dogfurthertesting" value="unkown" /> 
 				Unkown
 			</label>
 		</td>
@@ -57,13 +57,13 @@
 <div>
 	<label>Dog test #1</label><br />
 	<textarea id="dogTest1Comments" rows="{{form.commentHeight}}"
-		cols="{{form.commentWidth}}">
+		cols="{{form.commentWidth}}" ng-model="data.output.animaltest.dogtest1">
 	</textarea>
 </div>
 <div>
 	<label>Dog test #2</label><br />
 	<textarea id="dogTest2Comments" rows="{{form.commentHeight}}"
-		cols="{{form.commentWidth}}">
+		cols="{{form.commentWidth}}" ng-model="data.output.animaltest.dogtest2">
 	</textarea>
 </div>
 <table>
@@ -72,13 +72,13 @@
 			<label>Recommendations</label>
 		</td>
 		<td>
-			<div isteven-multi-select input-model="data.animaltest.dogrecommendations"
-				output-model="data.outputanimaltest.dogrecommendations" button-label="name"
+			<div isteven-multi-select input-model="data.input.animaltest.dogrecommendations"
+				output-model="data.output.animaltest.dogrecommendations" button-label="name"
 				item-label="name" tick-property="ticked"></div>
 		</td>
-		<td ng-show="form.containsOther(data.outputanimaltest.dogrecommendations)" >
+		<td ng-show="form.containsOther(data.output.animaltest.dogrecommendations)" >
 			<label>Other: </label>
-			<input id="dogrecommendationsother" />
+			<input id="dogrecommendationsother" ng-model="data.output.animaltest.dogrecommendationsother"/>
 		</td>
 	</tr>
 </table>
@@ -90,11 +90,11 @@
 		</td>
 		<td>
 			<label class="radiolabel"> 
-				<input type="radio" ng-model="data.animaltest.catprevtested" value="true" /> 
+				<input type="radio" ng-model="data.output.animaltest.catprevtested" value="true" /> 
 				Yes
 			</label> 
 			<label class="radiolabel">  
-				<input type="radio" ng-model="data.animaltest.catprevtested" value="false" /> 
+				<input type="radio" ng-model="data.output.animaltest.catprevtested" value="false" /> 
 				No
 			</label>
 		</td>
@@ -105,15 +105,15 @@
 		</td>
 		<td>
 			<label class="radiolabel"> 
-				<input type="radio" ng-model="data.animaltest.catdogfriendly" value="yes" /> 
+				<input type="radio" ng-model="data.output.animaltest.catdogfriendly" value="yes" /> 
 				Yes
 			</label> 
 			<label class="radiolabel"> 
-				<input type="radio" ng-model="data.animaltest.catdogfriendly" value="no" /> 
+				<input type="radio" ng-model="data.output.animaltest.catdogfriendly" value="no" /> 
 				No
 			</label>
 			<label class="radiolabel"> 
-				<input type="radio" ng-model="data.animaltest.catdogfriendly" value="unkown" /> 
+				<input type="radio" ng-model="data.output.animaltest.catdogfriendly" value="unkown" /> 
 				Unkown
 			</label>
 		</td>
@@ -124,15 +124,15 @@
 		</td>
 		<td>
 			<label class="radiolabel"> 
-				<input type="radio" ng-model="data.animaltest.dogfurthertesting" value="yes" /> 
+				<input type="radio" ng-model="data.output.animaltest.catfurthertesting" value="yes" /> 
 				Yes
 			</label> 
 			<label class="radiolabel"> 
-				<input type="radio" ng-model="data.animaltest.dogfurthertesting" value="no" /> 
+				<input type="radio" ng-model="data.output.animaltest.catfurthertesting" value="no" /> 
 				No
 			</label>
 			<label class="radiolabel"> 
-				<input type="radio" ng-model="data.animaltest.dogfurthertesting" value="unkown" /> 
+				<input type="radio" ng-model="data.output.animaltest.catfurthertesting" value="unkown" /> 
 				Unkown
 			</label>
 		</td>
@@ -142,13 +142,13 @@
 			<label>Initial Reaction</label>
 		</td>
 		<td>
-			<div isteven-multi-select input-model="data.animaltest.initialcat"
-				output-model="data.outputanimaltest.initialcat" button-label="name"
+			<div isteven-multi-select input-model="data.input.animaltest.initialcat"
+				output-model="data.output.animaltest.initialcat" button-label="name"
 				item-label="name" tick-property="ticked"></div>
 		</td>
-		<td ng-show="form.containsOther(data.outputanimaltest.initialcat)" >
+		<td ng-show="form.containsOther(data.output.animaltest.initialcat)" >
 			<label>Other: </label>
-			<input id="initialcatother" />
+			<input id="initialcatother" ng-model="data.output.animaltest.initialcatother"/>
 		</td>
 	</tr>
 	<tr>
@@ -156,13 +156,13 @@
 			<label>After meeting</label>
 		</td>
 		<td>
-			<div isteven-multi-select input-model="data.animaltest.aftercat"
-				output-model="data.outputanimaltest.aftercat" button-label="name"
+			<div isteven-multi-select input-model="data.input.animaltest.aftercat"
+				output-model="data.output.animaltest.aftercat" button-label="name"
 				item-label="name" tick-property="ticked"></div>
 		</td>
-		<td ng-show="form.containsOther(data.outputanimaltest.aftercat)" >
+		<td ng-show="form.containsOther(data.output.animaltest.aftercat)" >
 			<label>Other: </label>
-			<input id="aftercatother" />
+			<input id="aftercatother" ng-model="data.output.animaltest.aftercatother"/>
 		</td>
 	</tr>
 	<tr>
@@ -170,19 +170,19 @@
 			<label>Recommendations</label>
 		</td>
 		<td>
-			<div isteven-multi-select input-model="data.animaltest.catrecommendations"
-				output-model="data.outputanimaltest.catrecommendations" button-label="name"
+			<div isteven-multi-select input-model="data.input.animaltest.catrecommendations"
+				output-model="data.output.animaltest.catrecommendations" button-label="name"
 				item-label="name" tick-property="ticked"></div>
 		</td>
-		<td ng-show="form.containsOther(data.outputanimaltest.catrecommendations)" >
+		<td ng-show="form.containsOther(data.output.animaltest.catrecommendations)" >
 			<label>Other: </label>
-			<input id="catrecommendationsother" />
+			<input id="catrecommendationsother" ng-model="data.output.animaltest.catrecommendationsother"/>
 		</td>
 	</tr>
 </table>
 <div>
 	<label>Cat test comments</label><br />
 	<textarea id="catTestComments" rows="{{form.commentHeight}}"
-		cols="{{form.commentWidth}}">
+		cols="{{form.commentWidth}}" ng-model="data.output.animaltest.cattestcomments">
 	</textarea>
 </div>

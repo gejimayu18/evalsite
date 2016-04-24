@@ -3,11 +3,14 @@ package com.djonesyking.evalsite.controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.djonesyking.evalsite.domain.Behavior;
 import com.djonesyking.evalsite.domain.BehaviorList;
+import com.djonesyking.evalsite.submit.domain.Evaluation;
 
 @RestController
 @RequestMapping("/rest/behaviors/")
@@ -57,6 +60,19 @@ public class BehaviorsController {
     @RequestMapping("ignore")
     public BehaviorList getIgnoreBehaviors() {
     	return buildSociabilityList();
+    }
+    @RequestMapping("backstrokes")
+    public BehaviorList getBackstrokeBehaviors() {
+    	BehaviorList list = new BehaviorList();
+    	list.addListOfBehaviors(getTailList());
+		list.addListOfBehaviors(getEyeList());
+    	list.addBehavior(new Behavior("Wants more"));
+    	list.addBehavior(new Behavior("Head whips"));
+    	list.addBehavior(new Behavior("Shy"));
+    	list.addBehavior(new Behavior("Nervous"));
+    	list.addBehavior(new Behavior("lip licks"));
+    	list.addBehavior(new Behavior("stiff"));
+    	return list;
     }
     @RequestMapping("engage")
     public BehaviorList getEngageBehaviors() {
@@ -418,6 +434,26 @@ public class BehaviorsController {
 		list.addBehavior(new Behavior("Jumpy/mouthy behavior"));
 		list.addBehavior(new Behavior("Assertive behavior"));
 		return list;
+	}
+	
+	@RequestMapping(value="submit", method = RequestMethod.POST)
+	public void submit(@RequestBody Evaluation input) {
+		System.out.println("Header");
+		System.out.println(input.getHeader());
+		System.out.println("Sociability");
+		System.out.println(input.getSociability());
+		System.out.println("Body Handling");
+		System.out.println(input.getBh());
+		System.out.println("Resources");
+		System.out.println(input.getResources());
+		System.out.println("Noises");
+		System.out.println(input.getNoises());
+		System.out.println("Dolls");
+		System.out.println(input.getDolls());
+		System.out.println("Animal test");
+		System.out.println(input.getAnimaltest());
+		System.out.println("Recommendations");
+		System.out.println(input.getRecommmendations());
 	}
 	
 	private List<Behavior> getTailList() {

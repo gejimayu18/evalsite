@@ -4,32 +4,32 @@
 	<tr>
 		<td>
 			<label>Taking treats</label>
-			<div isteven-multi-select input-model="data.treats.takingtreatsbehaviors"
-				output-model="data.outputtreats.takingtreatsbehaviors" button-label="name"
+			<div isteven-multi-select input-model="data.input.resources.treats.takingtreatsbehaviors"
+				output-model="data.output.resources.treats.takingtreatsbehaviors" button-label="name"
 				item-label="name" tick-property="ticked"></div>
 		</td>
-		<td ng-show="form.containsOther(data.outputtreats.takingtreatsbehaviors)" >
+		<td ng-show="form.containsOther(data.output.resources.treats.takingtreatsbehaviors)" >
 			<label>Other: </label>
-			<input id="takingtreatsbehaviorother" />
+			<input id="takingtreatsbehaviorother" ng-model="data.output.resources.treats.takingtreatsbehaviorother" />
 		</td>
 		<td>
 			<label>Treats used</label>
-			<div isteven-multi-select input-model="data.treats.treatsused"
-				output-model="data.outputtreats.treatsused" button-label="name"
+			<div isteven-multi-select input-model="data.input.resources.treats.treatsused"
+				output-model="data.output.resources.treats.treatsused" button-label="name"
 				item-label="name" tick-property="ticked"></div>
 		</td>
-		<td ng-show="form.containsOther(data.outputtreats.treatsused)" >
+		<td ng-show="form.containsOther(data.output.resources.treats.treatsused)" >
 			<label>Other: </label>
-			<input id="treatsusedbehaviorother" />
+			<input id="treatsusedbehaviorother" ng-model="data.output.resources.treats.treatsusedbehaviorother"/>
 		<td>
 			<label>Commands</label>
-			<div isteven-multi-select input-model="data.treats.commands"
-				output-model="data.outputtreats.commands" button-label="name"
+			<div isteven-multi-select input-model="data.input.resources.treats.commands"
+				output-model="data.output.resources.treats.commands" button-label="name"
 				item-label="name" tick-property="ticked"></div>
 		</td>
-		<td ng-show="form.containsOther(data.outputtreats.commands)" >
+		<td ng-show="form.containsOther(data.output.resources.treats.commands)" >
 			<label>Other: </label>
-			<input id="commandsbehaviorother" />
+			<input id="commandsbehaviorother" ng-model="data.output.resources.treats.commandsbehaviorother"/>
 		</td>
 	</tr>
 </table>
@@ -40,10 +40,10 @@
 			<label>Toy used</label>
 		</td>
 		<td>
-			<input ng-model="data.outputtoys.used1" id="toyused1" />
+			<input ng-model="data.output.resources.toys.used1" id="toyused1" />
 		</td>
 		<td>
-			<input ng-model="data.outputtoys.used2" id="toyused2" />
+			<input ng-model="data.output.resources.toys.used2" id="toyused2" />
 		</td>
 	</tr>
 	<tr>
@@ -51,8 +51,8 @@
 			<label>Hand</label>
 		</td>
 		<td>
-			<div isteven-multi-select input-model="data.toys.hands"
-				output-model="data.outputtoys.hands" button-label="name"
+			<div isteven-multi-select input-model="data.input.resources.toys.hands"
+				output-model="data.output.resources.toys.hands" button-label="name"
 				item-label="name" tick-property="ticked"></div>
 		</td>
 	</tr>
@@ -61,8 +61,8 @@
 			<label>Interest</label>
 		</td>
 		<td>
-			<div isteven-multi-select input-model="data.toys.interest"
-				output-model="data.outputtoys.interest" button-label="name"
+			<div isteven-multi-select input-model="data.input.resources.toys.interest"
+				output-model="data.output.resources.toys.interest" button-label="name"
 				item-label="name" tick-property="ticked"></div>
 		</td>
 	</tr>
@@ -71,13 +71,13 @@
 			<label>Behaviors</label>
 		</td>
 		<td>
-			<div isteven-multi-select input-model="data.toys.toysbehavior"
-				output-model="data.outputtoys.toysbehavior" button-label="name"
+			<div isteven-multi-select input-model="data.input.resources.toys.toysbehavior"
+				output-model="data.output.resources.toys.behavior" button-label="name"
 				item-label="name" tick-property="ticked"></div>
 		</td>
-		<td ng-show="form.containsOther(data.outputtoys.toysbehavior)" >
+		<td ng-show="form.containsOther(data.output.resources.toys.behavior)" >
 			<label>Other: </label>
-			<input id="toysbehaviorother" />
+			<input id="toysbehaviorother" ng-model="data.output.resources.toys.behaviorother"/>
 		</td>
 	</tr>
 </table>
@@ -85,13 +85,13 @@
 <table>
 	<tr>
 		<td>
-			<label>Toy used</label>
+			<label>Bone used</label>
 		</td>
 		<td>
-			<input ng-model="data.outputbones.used1" id="boneused1" />
+			<input ng-model="data.output.resources.bones.used1" id="boneused1" />
 		</td>
 		<td>
-			<input ng-model="data.outputbones.used2" id="boneused2" />
+			<input ng-model="data.output.resources.bones.used2" id="boneused2" />
 		</td>
 	</tr>
 	<tr>
@@ -99,8 +99,8 @@
 			<label>Hand</label>
 		</td>
 		<td>
-			<div isteven-multi-select input-model="data.bones.hands"
-				output-model="data.outputbones.hands" button-label="name"
+			<div isteven-multi-select input-model="data.input.resources.bones.hands"
+				output-model="data.output.resources.bones.hands" button-label="name"
 				item-label="name" tick-property="ticked"></div>
 		</td>
 	</tr>
@@ -109,8 +109,8 @@
 			<label>Interest</label>
 		</td>
 		<td>
-			<div isteven-multi-select input-model="data.bones.interest"
-				output-model="data.outputbones.interest" button-label="name"
+			<div isteven-multi-select input-model="data.input.resources.bones.interest"
+				output-model="data.output.resources.bones.interest" button-label="name"
 				item-label="name" tick-property="ticked"></div>
 		</td>
 	</tr>
@@ -119,13 +119,13 @@
 			<label>Behaviors</label>
 		</td>
 		<td>
-			<div isteven-multi-select input-model="data.bones.bonesbehavior"
-				output-model="data.outputbones.bonesbehavior" button-label="name"
+			<div isteven-multi-select input-model="data.input.resources.bones.bonesbehavior"
+				output-model="data.output.resources.bones.behavior" button-label="name"
 				item-label="name" tick-property="ticked"></div>
 		</td>
-		<td ng-show="form.containsOther(data.outputbones.bonesbehavior)" >
+		<td ng-show="form.containsOther(data.output.resources.bones.behavior)" >
 			<label>Other: </label>
-			<input id="bonesbehaviorother" />
+			<input id="bonesbehaviorother" ng-model="data.output.resources.bones.behaviorother"/>
 		</td>
 	</tr>
 </table>
@@ -135,11 +135,11 @@
 		<td><strong>Treats used to coax dog</strong></td>
 		<td>
 			<label class="radiolabel">
-				<input type="radio" ng-model="data.food.coax" value="true" /> 
+				<input type="radio" ng-model="data.output.resources.food.coax" value="true" /> 
 				Yes
 			</label> 
 			<label class="radiolabel"> 
-				<input type="radio" ng-model="data.food.coax" value="false" /> 
+				<input type="radio" ng-model="data.output.resources.food.coax" value="false" /> 
 				No
 			</label>
 		</td>
@@ -147,8 +147,8 @@
 			<label>Hand</label>
 		</td>
 		<td>
-			<div isteven-multi-select input-model="data.food.hands"
-				output-model="data.outputfood.hands" button-label="name"
+			<div isteven-multi-select input-model="data.input.resources.food.hands"
+				output-model="data.output.resources.food.hands" button-label="name"
 				item-label="name" tick-property="ticked"></div>
 		</td>
 	</tr>
@@ -157,8 +157,8 @@
 			<label>Interest</label>
 		</td>
 		<td>
-			<div isteven-multi-select input-model="data.food.interest"
-				output-model="data.outputfood.interest" button-label="name"
+			<div isteven-multi-select input-model="data.input.resources.food.interest"
+				output-model="data.output.resources.food.interest" button-label="name"
 				item-label="name" tick-property="ticked"></div>
 		</td>
 	</tr>
@@ -167,13 +167,13 @@
 			<label>Initial Delivery Behaviors</label>
 		</td>
 		<td>
-			<div isteven-multi-select input-model="data.food.delivery"
-				output-model="data.outputfood.delivery" button-label="name"
+			<div isteven-multi-select input-model="data.input.resources.food.delivery"
+				output-model="data.output.resources.food.delivery" button-label="name"
 				item-label="name" tick-property="ticked"></div>
 		</td>
-		<td ng-show="form.containsOther(data.outputfood.delivery)" >
+		<td ng-show="form.containsOther(data.output.resources.food.delivery)" >
 			<label>Other: </label>
-			<input id="foodinitdeliverybehaviorother" />
+			<input id="foodinitdeliverybehaviorother" ng-model="data.output.resources.food.foodinitdeliverybehaviorother"/>
 		</td>
 	</tr>
 	<tr>
@@ -181,13 +181,13 @@
 			<label>Initial Approach Behaviors</label>
 		</td>
 		<td>
-			<div isteven-multi-select input-model="data.food.initialapproach"
-				output-model="data.outputfood.initialapproach" button-label="name"
+			<div isteven-multi-select input-model="data.input.resources.food.initialapproach"
+				output-model="data.output.resources.food.initialapproach" button-label="name"
 				item-label="name" tick-property="ticked"></div>
 		</td>
-		<td ng-show="form.containsOther(data.outputbones.initialapproach)" >
+		<td ng-show="form.containsOther(data.output.resources.food.initialapproach)" >
 			<label>Other: </label>
-			<input id="initialapproachother" />
+			<input id="initialapproachother" ng-model="data.output.resources.food.initialapproachother"/>
 		</td>
 	</tr>
 	<tr>
@@ -195,13 +195,13 @@
 			<label>Touch Dog Behaviors</label>
 		</td>
 		<td>
-			<div isteven-multi-select input-model="data.food.touchdog"
-				output-model="data.outputfood.touchdog" button-label="name"
+			<div isteven-multi-select input-model="data.input.resources.food.touchdog"
+				output-model="data.output.resources.food.touchdog" button-label="name"
 				item-label="name" tick-property="ticked"></div>
 		</td>
-		<td ng-show="form.containsOther(data.outputbones.touchdog)" >
+		<td ng-show="form.containsOther(data.output.resources.food.touchdog)" >
 			<label>Other: </label>
-			<input id="touchdogother" />
+			<input id="touchdogother" ng-model="data.output.resources.food.touchdogother"/>
 		</td>
 	</tr>
 	<tr>
@@ -209,18 +209,18 @@
 			<label>Touch Bowl Behaviors</label>
 		</td>
 		<td>
-			<div isteven-multi-select input-model="data.food.touchbowl"
-				output-model="data.outputfood.touchbowl" button-label="name"
+			<div isteven-multi-select input-model="data.input.resources.food.touchbowl"
+				output-model="data.output.resources.food.touchbowl" button-label="name"
 				item-label="name" tick-property="ticked"></div>
 		</td>
-		<td ng-show="form.containsOther(data.outputbones.touchbowl)" >
+		<td ng-show="form.containsOther(data.output.resources.food.touchbowl)" >
 			<label>Other: </label>
-			<input id="touchbowlother" />
+			<input id="touchbowlother" ng-model="data.output.resources.food.touchbowlother"/>
 		</td>
 	</tr>
 </table>
 <label>Resources comments</label>
 <br />
 <textarea id="resourcesBehaviorComments" rows="{{form.commentHeight}}"
-	cols="{{form.commentWidth}}">
+	cols="{{form.commentWidth}}" ng-model="data.output.resources.comments">
 </textarea>

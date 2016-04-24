@@ -1,63 +1,63 @@
 <table cellpadding="10">
 	<tr>
 		<td><strong>Evaluator</strong></td>
-		<td><input id="evaluatortxt" /></td>
+		<td><input id="evaluatortxt" ng-model="data.output.header.evaluator"/></td>
 		<td><strong>Handler</strong></td>
-		<td><input id="handlertxt" /></td>
+		<td><input id="handlertxt" ng-model="data.output.header.handler"/></td>
 		<td><strong>Dog name</strong></td>
-		<td><input id="dognametxt" /></td>
+		<td><input id="dognametxt" ng-model="data.output.header.dogname"/></td>
 		<td><strong>ID #</strong></td>
-		<td><input id="dogidtxt" /></td>
+		<td><input id="dogidtxt" ng-model="data.output.header.dogid"/></td>
 	</tr>
 	<tr>
 		<td><strong>Breed(s)</strong></td>
-		<td><input id="breedtxt" /></td>
+		<td><input id="breedtxt" ng-model="data.output.header.breed"/></td>
 		<td><strong>Gender</strong></td>
 		<td>
 			<label class="radiolabel"> 
-				<input type="radio" ng-model="data.gender" value="fi" /> 
+				<input type="radio" ng-model="data.output.header.gender" value="fi" /> 
 				F/I
 			</label> 
 			<label class="radiolabel"> 
-				<input type="radio" ng-model="data.gender" value="fs" /> 
+				<input type="radio" ng-model="data.output.header.gender" value="fs" /> 
 				F/S
 			</label>
 			<label class="radiolabel">  
-				<input type="radio" ng-model="data.gender" value="mi" /> 
+				<input type="radio" ng-model="data.output.header.gender" value="mi" /> 
 				M/I
 			</label>
 			<label class="radiolabel"> 
-				<input type="radio" ng-model="data.gender" value="mn" /> 
+				<input type="radio" ng-model="data.output.header.gender" value="mn" /> 
 				M/N
 			</label>
 		</td>
 		<td><strong>Age Range</strong></td>
-		<td><input id="agetxt" /></td>
+		<td><input id="agetxt" ng-model="data.output.header.age"/></td>
 	</tr>
 	<tr>
 		<td><strong>Intake Date</strong></td>
-		<td><input type="date" ng-model="data.intakeDate" id="intaketxt" /></td>
+		<td><input type="date" ng-model="data.output.header.intakeDate" id="intaketxt" /></td>
 		<td><strong>Today's Date</strong></td>
-		<td><input type="date" ng-model="data.evalDate" id="evaldatetxt" /></td>
+		<td><input type="date" ng-model="data.output.header.evalDate" id="evaldatetxt" /></td>
 		<td><strong>Re-eval</strong></td>
 		<td>
 			<label class="radiolabel"> 
-				<input type="radio" ng-model="data.reeval" value="true" /> 
+				<input type="radio" ng-model="data.output.header.reeval" value="true" /> 
 				Yes
 			</label> 
 			<label class="radiolabel"> 
-				<input type="radio" ng-model="data.reeval" value="false" /> 
+				<input type="radio" ng-model="data.output.header.reeval" value="false" /> 
 				No
 			</label>
 		</td>
 		<td><strong>Pending</strong></td>
 		<td>
 			<label class="radiolabel"> 
-				<input type="radio" ng-model="data.pending" value="true" /> 
+				<input type="radio" ng-model="data.output.header.pending" value="true" /> 
 				Yes
 			</label> 
 			<label class="radiolabel"> 
-				<input type="radio" ng-model="data.pending" value="false" /> 
+				<input type="radio" ng-model="data.output.header.pending" value="false" /> 
 				No
 			</label>
 		</td>

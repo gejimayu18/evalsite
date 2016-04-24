@@ -4,23 +4,23 @@
 	<tr>
 		<td>
 			<label>Intro</label>
-			<div isteven-multi-select input-model="data.dolls.initialbaby"
-				output-model="data.outputdolls.initialbaby" button-label="name"
+			<div isteven-multi-select input-model="data.input.dolls.initialbaby"
+				output-model="data.output.dolls.initialbaby" button-label="name"
 				item-label="name" tick-property="ticked"></div>
 		</td>
-		<td ng-show="form.containsOther(data.outputdolls.initialbaby)" >
+		<td ng-show="form.containsOther(data.output.dolls.initialbaby)" >
 			<label>Other: </label>
-			<input id="initialbabyother" />
+			<input id="initialbabyother" ng-model="data.output.dolls.initialbabyother"/>
 		</td>
 		<td>
 			<label>After initial intro</label>
-			<div isteven-multi-select input-model="data.dolls.afterbaby"
-				output-model="data.outputdolls.afterbaby" button-label="name"
+			<div isteven-multi-select input-model="data.input.dolls.afterbaby"
+				output-model="data.output.dolls.afterbaby" button-label="name"
 				item-label="name" tick-property="ticked"></div>
 		</td>
-		<td ng-show="form.containsOther(data.outputdolls.afterbaby)" >
+		<td ng-show="form.containsOther(data.output.dolls.afterbaby)" >
 			<label>Other: </label>
-			<input id="afterbabyeother" />
+			<input id="afterbabyeother" ng-model="data.output.dolls.afterbabyeother"/>
 	</tr>
 </table>
 <h3>Toddler</h3>
@@ -28,27 +28,27 @@
 	<tr>
 		<td>
 			<label>Intro</label>
-			<div isteven-multi-select input-model="data.dolls.initialtoddler"
-				output-model="data.outputdolls.initialtoddler" button-label="name"
+			<div isteven-multi-select input-model="data.input.dolls.initialtoddler"
+				output-model="data.output.dolls.initialtoddler" button-label="name"
 				item-label="name" tick-property="ticked"></div>
 		</td>
-		<td ng-show="form.containsOther(data.outputdolls.initialtoddler)" >
+		<td ng-show="form.containsOther(data.output.dolls.initialtoddler)" >
 			<label>Other: </label>
-			<input id="initialtoddlerother" />
+			<input id="initialtoddlerother" ng-model="data.output.dolls.initialtoddlerother"/>
 		</td>
 		<td>
 			<label>After initial intro</label>
-			<div isteven-multi-select input-model="data.dolls.aftertoddler"
-				output-model="data.outputdolls.aftertoddler" button-label="name"
+			<div isteven-multi-select input-model="data.input.dolls.aftertoddler"
+				output-model="data.output.dolls.aftertoddler" button-label="name"
 				item-label="name" tick-property="ticked"></div>
 		</td>
-		<td ng-show="form.containsOther(data.outputdolls.aftertoddler)" >
+		<td ng-show="form.containsOther(data.output.dolls.aftertoddler)" >
 			<label>Other: </label>
-			<input id="aftertoddlereother" />
+			<input id="aftertoddlereother" ng-model="data.output.dolls.aftertoddlereother"/>
 	</tr>
 </table>
 <label>Dolls comments</label>
 <br />
 <textarea id="dollsComments" rows="{{form.commentHeight}}"
-	cols="{{form.commentWidth}}">
+	cols="{{form.commentWidth}}" ng-model="data.output.dolls.comments">
 </textarea>
