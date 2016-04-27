@@ -6,6 +6,7 @@ public class Resources {
 	private Resource toys;
 	private Resource bones;
 	private String comments;
+	private FoodResource food;
 	public Treats getTreats() {
 		return treats;
 	}
@@ -30,9 +31,16 @@ public class Resources {
 	public void setComments(String comments) {
 		this.comments = comments;
 	}
+	public FoodResource getFood() {
+		return food;
+	}
+	public void setFood(FoodResource food) {
+		this.food = food;
+	}
 	@Override
 	public String toString() {
-		return "Resources [treats=" + treats + ", toys=" + toys + ", bones=" + bones + ", comments=" + comments + "]";
+		return "Resources [treats=" + treats + ", toys=" + toys + ", bones=" + bones + ", comments=" + comments
+				+ ", food=" + food + "]";
 	}
 	
 	

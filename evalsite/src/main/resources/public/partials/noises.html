@@ -75,13 +75,24 @@
 			</label>
 		</td>
 		<td>
-			<div isteven-multi-select input-model="data.input.noises.stranger"
-				output-model="data.output.noises.stranger" button-label="name"
+			<label>Initial Reaction</label>
+			<div isteven-multi-select input-model="data.input.noises.initialstranger"
+				output-model="data.output.noises.initialstranger" button-label="name"
 				item-label="name" tick-property="ticked"></div>
 		</td>
-		<td ng-show="form.containsOther(data.output.noises.stranger)" >
+		<td ng-show="form.containsOther(data.output.noises.initialstranger)" >
 			<label>Other: </label>
-			<input id="strangerother" ng-model="data.output.noises.strangerother"/>
+			<input id="initialstrangerother" ng-model="data.output.noises.initialstrangerother"/>
+		</td>
+		<td>
+			<label>Recovery</label>
+			<div isteven-multi-select input-model="data.input.noises.recoverstranger"
+				output-model="data.output.noises.recoverstranger" button-label="name"
+				item-label="name" tick-property="ticked"></div>
+		</td>
+		<td ng-show="form.containsOther(data.output.noises.recoverstranger)" >
+			<label>Other: </label>
+			<input id="recoverstrangerother" ng-model="data.output.noises.recoverstrangerother"/>
 		</td>
 	</tr>
 </table>

@@ -17,8 +17,10 @@ public class Noises {
 	private List<Behavior> initialknockatdoor;
 	private String initialknockatdoorother;
 	private String strangergender;
-	private List<Behavior> stranger;
-	private String strangerother;
+	private List<Behavior> initialstranger;
+	private String initialstrangerother;
+	private List<Behavior> recoverstranger;
+	private String recoverstrangerother;
 	private String comment;
 	public List<Behavior> getInitialloudnoise() {
 		return initialloudnoise;
@@ -86,23 +88,35 @@ public class Noises {
 	public void setStrangergender(String strangergender) {
 		this.strangergender = strangergender;
 	}
-	public List<Behavior> getStranger() {
-		return stranger;
-	}
-	public void setStranger(List<Behavior> stranger) {
-		this.stranger = stranger;
-	}
-	public String getStrangerother() {
-		return strangerother;
-	}
-	public void setStrangerother(String strangerother) {
-		this.strangerother = strangerother;
-	}
 	public String getComment() {
 		return comment;
 	}
 	public void setComment(String comment) {
 		this.comment = comment;
+	}
+	public List<Behavior> getInitialstranger() {
+		return initialstranger;
+	}
+	public void setInitialstranger(List<Behavior> initialstranger) {
+		this.initialstranger = initialstranger;
+	}
+	public String getInitialstrangerother() {
+		return initialstrangerother;
+	}
+	public void setInitialstrangerother(String initialstrangerother) {
+		this.initialstrangerother = initialstrangerother;
+	}
+	public List<Behavior> getRecoverstranger() {
+		return recoverstranger;
+	}
+	public void setRecoverstranger(List<Behavior> recoverstranger) {
+		this.recoverstranger = recoverstranger;
+	}
+	public String getRecoverstrangerother() {
+		return recoverstrangerother;
+	}
+	public void setRecoverstrangerother(String recoverstrangerother) {
+		this.recoverstrangerother = recoverstrangerother;
 	}
 	@Override
 	public String toString() {
@@ -111,8 +125,9 @@ public class Noises {
 				+ ", initialscold=" + initialscold + ", initialscoldother=" + initialscoldother + ", recoverscold="
 				+ recoverscold + ", recoverscoldother=" + recoverscoldother + ", initialknockatdoor="
 				+ initialknockatdoor + ", initialknockatdoorother=" + initialknockatdoorother + ", strangergender="
-				+ strangergender + ", stranger=" + stranger + ", strangerother=" + strangerother + ", comment="
-				+ comment + "]";
+				+ strangergender + ", initialstranger=" + initialstranger + ", initialstrangerother="
+				+ initialstrangerother + ", recoverstranger=" + recoverstranger + ", recoverstrangerother="
+				+ recoverstrangerother + ", comment=" + comment + "]";
 	}
 	
 	

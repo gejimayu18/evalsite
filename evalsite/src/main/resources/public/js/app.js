@@ -8,6 +8,10 @@
 					templateUrl: "partials/ui.html",
 					controller: "EvalsiteController"
 				})
+				.when("/ui/:id", {
+					templateUrl: "partials/ui.html",
+					controller: "EvalsiteController"
+				})
 				.otherwise({redirectTo: "/ui/"});
 		}]);
 }(window.angular));
