@@ -2,6 +2,8 @@ package com.djonesyking.evalsite.submit.domain;
 
 import java.util.Date;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 public class Header {
 	private String evaluator;
 	private String handler;
@@ -10,7 +12,9 @@ public class Header {
 	private String breed;
 	private String gender;
 	private String age;
+	@JsonFormat(pattern="yyyy-MM-dd")
 	private Date intakeDate;
+	@JsonFormat(pattern="yyyy-MM-dd")
 	private Date evalDate;
 	private String reeval;
 	private String pending;

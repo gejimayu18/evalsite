@@ -8,7 +8,7 @@ public class Evaluation {
 	private Noises noises;
 	private Dolls dolls;
 	private AnimalTest animaltest;
-	private Recommendations recommmendations;
+	private Recommendations recommendations;
 
 	public Header getHeader() {
 		return header;
@@ -66,20 +66,21 @@ public class Evaluation {
 		this.animaltest = animaltest;
 	}
 
-	public Recommendations getRecommmendations() {
-		return recommmendations;
+	public Recommendations getRecommendations() {
+		return recommendations;
 	}
 
-	public void setRecommmendations(Recommendations recommmendations) {
-		this.recommmendations = recommmendations;
+	public void setRecommendations(Recommendations recommendations) {
+		this.recommendations = recommendations;
 	}
 
 	@Override
 	public String toString() {
 		return "Evaluation [header=" + header + ", sociability=" + sociability + ", bh=" + bh + ", resources="
 				+ resources + ", noises=" + noises + ", dolls=" + dolls + ", animaltest=" + animaltest
-				+ ", recommmendations=" + recommmendations + "]";
+				+ ", recommendations=" + recommendations + "]";
 	}
+
 	
 	
 

@@ -1,8 +1,17 @@
 package com.djonesyking.evalsite.controller;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.http.HttpServletResponse;
+
+import org.codehaus.jackson.JsonGenerationException;
+import org.codehaus.jackson.JsonParseException;
+import org.codehaus.jackson.map.JsonMappingException;
+import org.codehaus.jackson.map.ObjectMapper;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -10,6 +19,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.djonesyking.evalsite.domain.Behavior;
 import com.djonesyking.evalsite.domain.BehaviorList;
+import com.djonesyking.evalsite.domain.SubmitResponse;
+import com.djonesyking.evalsite.pdf.FirstPdf;
 import com.djonesyking.evalsite.submit.domain.Evaluation;
 
 @RestController
@@ -436,24 +447,34 @@ public class BehaviorsController {
 		return list;
 	}
 	
+	@RequestMapping("/eval/{id}")
+	public Evaluation getEval(@PathVariable String id) throws JsonParseException, JsonMappingException, IOException {
+		ObjectMapper mapper = new ObjectMapper();
+		StringBuilder fileName = new StringBuilder();
+		fileName.append("c:/temp/");
+		fileName.append(id);
+		fileName.append(".json");
+		File file = new File(fileName.toString());
+		Evaluation eval = new Evaluation();
+		if (file.exists()) {
+			eval = mapper.readValue(file, Evaluation.class);
+		}
+		return eval;
+	}
+	
 	@RequestMapping(value="submit", method = RequestMethod.POST)
-	public void submit(@RequestBody Evaluation input) {
-		System.out.println("Header");
-		System.out.println(input.getHeader());
-		System.out.println("Sociability");
-		System.out.println(input.getSociability());
-		System.out.println("Body Handling");
-		System.out.println(input.getBh());
-		System.out.println("Resources");
-		System.out.println(input.getResources());
-		System.out.println("Noises");
-		System.out.println(input.getNoises());
-		System.out.println("Dolls");
-		System.out.println(input.getDolls());
-		System.out.println("Animal test");
-		System.out.println(input.getAnimaltest());
-		System.out.println("Recommendations");
-		System.out.println(input.getRecommmendations());
+	public SubmitResponse submit(@RequestBody Evaluation input) throws JsonGenerationException, JsonMappingException, IOException {
+		ObjectMapper mapper = new ObjectMapper();
+		StringBuilder fileName = new StringBuilder();
+		fileName.append("c:/temp/");
+		fileName.append(input.getHeader().getDogid());
+		fileName.append(".json");
+		mapper.writeValue(new File(fileName.toString()), input);
+		FirstPdf pdf = new FirstPdf();
+		pdf.buildPDF(input);
+		SubmitResponse response = new SubmitResponse();
+		response.setFilepath(fileName.toString());
+		return response;
 	}
 	
 	private List<Behavior> getTailList() {

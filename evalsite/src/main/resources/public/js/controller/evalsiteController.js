@@ -3,8 +3,8 @@
 	"use strict";
 	
 	angular.module("EvalsiteController", ["EvalsiteRESTService"])
-		.controller("EvalsiteController", ["$scope", "$filter", "evalsiteRESTService",
-		function ($scope, $filter, evalsiteRESTService) {
+		.controller("EvalsiteController", ["$scope", "$filter", "evalsiteRESTService", "$routeParams", "$window", "$sce",
+		function ($scope, $filter, evalsiteRESTService, $routeParams, $window, $sce) {
 			$scope.data = {};
 			$scope.ui = {};
 			$scope.searchfunc = {};
@@ -42,6 +42,19 @@
 			$scope.data.output.dolls = {};
 			$scope.data.output.animaltest = {};
 			$scope.data.output.recommendations = {};
+			$scope.data.output.header.dogid = $routeParams.id;
+			
+			if (angular.isDefined($routeParams.id)) {
+				alert("Trying to retrieve " + $routeParams.id);
+				evalsiteRESTService.getEval($routeParams.id).get(
+						function (response) {
+							$scope.data.output = angular.copy(response);
+						},
+						function () {
+							alert("Failed to retrieve");
+						}
+				);
+			}
 			
 			$scope.data.output.header.evalDate = new Date(Date.now());
 			
@@ -165,6 +178,7 @@
 						$scope.data.input.noises.initialloudnoise = angular.copy(response.behaviorList);
 						$scope.data.input.noises.initialscold = angular.copy(response.behaviorList);
 						$scope.data.input.noises.initialknockatdoor = angular.copy(response.behaviorList);
+						$scope.data.input.noises.initialstranger = angular.copy(response.behaviorList);
 					},
 					function () {}
 			);
@@ -177,7 +191,7 @@
 			);
 			evalsiteRESTService.getBehaviors('noises/stranger').get(
 					function (response) {
-						$scope.data.input.noises.stranger = angular.copy(response.behaviorList);
+						$scope.data.input.noises.recoverstranger = angular.copy(response.behaviorList);
 					},
 					function () {}
 			);
@@ -275,7 +289,7 @@
 				evalsiteRESTService.submitEval().save({},$scope.data.output)
 				.$promise
 				.then(function (response) {
-					alert("Worked");
+					window.location = response.filepath;
 				}, function() {
 					alert("didn't work");
 				});

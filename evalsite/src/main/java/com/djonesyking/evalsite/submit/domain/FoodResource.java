@@ -11,6 +11,8 @@ public class FoodResource {
 	private List<Behavior> interest;
 	private List<Behavior> delivery;
 	private String foodinitdeliverybehaviorother;
+	private List<Behavior> initialapproach;
+	private String initialapproachother;
 	private List<Behavior> touchdog;
 	private String touchdogother;
 	private List<Behavior> touchbowl;
@@ -69,10 +71,23 @@ public class FoodResource {
 	public void setTouchbowlother(String touchbowlother) {
 		this.touchbowlother = touchbowlother;
 	}
+	public List<Behavior> getInitialapproach() {
+		return initialapproach;
+	}
+	public void setInitialapproach(List<Behavior> initialapproach) {
+		this.initialapproach = initialapproach;
+	}
+	public String getInitialapproachother() {
+		return initialapproachother;
+	}
+	public void setInitialapproachother(String initialapproachother) {
+		this.initialapproachother = initialapproachother;
+	}
 	@Override
 	public String toString() {
 		return "FoodResource [coax=" + coax + ", hands=" + hands + ", interest=" + interest + ", delivery=" + delivery
-				+ ", foodinitdeliverybehaviorother=" + foodinitdeliverybehaviorother + ", touchdog=" + touchdog
+				+ ", foodinitdeliverybehaviorother=" + foodinitdeliverybehaviorother + ", initialapproach="
+				+ initialapproach + ", initialapproachother=" + initialapproachother + ", touchdog=" + touchdog
 				+ ", touchdogother=" + touchdogother + ", touchbowl=" + touchbowl + ", touchbowlother=" + touchbowlother
 				+ "]";
 	}
