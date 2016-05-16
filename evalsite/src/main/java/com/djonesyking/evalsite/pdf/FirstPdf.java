@@ -79,8 +79,8 @@ public class FirstPdf {
 		document.addTitle(eval.getHeader().getDogid() + " " + eval.getHeader().getDogname() + " Evaluation");
 		document.addSubject(eval.getHeader().getDogid() + " " + eval.getHeader().getDogname() + " Evaluation");
 		document.addKeywords(eval.getHeader().getDogid() + ", " + eval.getHeader().getDogname() + ", Evaluation");
-		document.addAuthor("DELCO SPCA");
-		document.addCreator("DELCO SPCA");
+		document.addAuthor("Providence Animal Center");
+		document.addCreator("Providence Animal Center");
 	}
 
 	private void addTitlePage(Document document, Evaluation eval) throws DocumentException {
