@@ -5,8 +5,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.servlet.http.HttpServletResponse;
-
 import org.codehaus.jackson.JsonGenerationException;
 import org.codehaus.jackson.JsonParseException;
 import org.codehaus.jackson.map.JsonMappingException;
@@ -20,12 +18,15 @@ import org.springframework.web.bind.annotation.RestController;
 import com.djonesyking.evalsite.domain.Behavior;
 import com.djonesyking.evalsite.domain.BehaviorList;
 import com.djonesyking.evalsite.domain.SubmitResponse;
+import com.djonesyking.evalsite.file.FileLocator;
 import com.djonesyking.evalsite.pdf.FirstPdf;
 import com.djonesyking.evalsite.submit.domain.Evaluation;
 
 @RestController
 @RequestMapping("/rest/behaviors/")
 public class BehaviorsController {
+	
+	private FileLocator fileLocator = new FileLocator();
 
     @RequestMapping("pull")
     public BehaviorList getPullBehaviors() {
@@ -450,11 +451,7 @@ public class BehaviorsController {
 	@RequestMapping("/eval/{id}")
 	public Evaluation getEval(@PathVariable String id) throws JsonParseException, JsonMappingException, IOException {
 		ObjectMapper mapper = new ObjectMapper();
-		StringBuilder fileName = new StringBuilder();
-		fileName.append("c:/temp/");
-		fileName.append(id);
-		fileName.append(".json");
-		File file = new File(fileName.toString());
+		File file = new File(fileLocator.getJSONFile(id));
 		Evaluation eval = new Evaluation();
 		if (file.exists()) {
 			eval = mapper.readValue(file, Evaluation.class);
@@ -465,15 +462,12 @@ public class BehaviorsController {
 	@RequestMapping(value="submit", method = RequestMethod.POST)
 	public SubmitResponse submit(@RequestBody Evaluation input) throws JsonGenerationException, JsonMappingException, IOException {
 		ObjectMapper mapper = new ObjectMapper();
-		StringBuilder fileName = new StringBuilder();
-		fileName.append("c:/temp/");
-		fileName.append(input.getHeader().getDogid());
-		fileName.append(".json");
-		mapper.writeValue(new File(fileName.toString()), input);
+		String jsonFile = fileLocator.getJSONFile(input.getHeader().getDogid());
+		mapper.writeValue(new File(jsonFile), input);
 		FirstPdf pdf = new FirstPdf();
-		pdf.buildPDF(input);
+		String buildPDF = pdf.buildPDF(input);
 		SubmitResponse response = new SubmitResponse();
-		response.setFilepath(fileName.toString());
+		response.setFilepath(buildPDF);
 		return response;
 	}
 	
