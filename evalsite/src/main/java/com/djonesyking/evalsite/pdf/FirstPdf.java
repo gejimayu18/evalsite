@@ -9,6 +9,7 @@ import java.util.Map;
 import org.springframework.util.StringUtils;
 
 import com.djonesyking.evalsite.domain.Behavior;
+import com.djonesyking.evalsite.file.FileLocator;
 import com.djonesyking.evalsite.submit.domain.AnimalTest;
 import com.djonesyking.evalsite.submit.domain.BodyHandling;
 import com.djonesyking.evalsite.submit.domain.Dolls;
@@ -41,7 +42,7 @@ import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
 
 public class FirstPdf {
-	private String FILE = "/var/www/";
+	private FileLocator fileLocator = new FileLocator();
 	private final Font catFont = new Font(Font.FontFamily.TIMES_ROMAN, 24, Font.BOLD);
 	private final Font subFont = new Font(Font.FontFamily.TIMES_ROMAN, 16, Font.BOLD);
 	private final Font smallBold = new Font(Font.FontFamily.TIMES_ROMAN, 12, Font.BOLD);
@@ -60,8 +61,8 @@ public class FirstPdf {
 	public String buildPDF(Evaluation eval) {
 		try {
 			Document document = new Document();
-			String filename = FILE + eval.getHeader().getDogid() + ".pdf";
-			PdfWriter.getInstance(document, new FileOutputStream(FILE));
+			String filename = fileLocator.getPDFFile(eval.getHeader().getDogid());
+			PdfWriter.getInstance(document, new FileOutputStream(filename));
 			document.open();
 			addMetaData(document, eval);
 			addTitlePage(document, eval);
